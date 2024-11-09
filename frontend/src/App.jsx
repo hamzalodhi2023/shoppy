@@ -4,6 +4,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Layout from "./components/layout/ui/Layout";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Shop from "./pages/Shop";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 const queryClient = new QueryClient();
 function App() {
   let routes = createBrowserRouter([
@@ -15,6 +21,30 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />
+        },
+        {
+          path: "/blog",
+          element: <Blog />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
+        },
+        {
+          path: "/shop",
+          element: <Shop />
+        },
+        {
+          path: "/signin",
+          element: <Signin />
+        },
+        {
+          path: "/signup",
+          element: <Signup />
         }
       ]
     }
