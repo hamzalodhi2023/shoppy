@@ -11,7 +11,7 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [isDark, setIsDark] = useState(false)
     useEffect(() => {
-        if (isDark) {
+        if (localStorage.getItem('darkMode') === 'true') {
             document.documentElement.classList.add('dark')
         } else {
             document.documentElement.classList.remove('dark')
@@ -22,11 +22,15 @@ function Navbar() {
         <nav className="w-full bg-white border-b border-gray-200 dark:bg-[#383838] dark:border-gray-600">
             <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <span onClick={() => navigate("/")} className="flex items-center cursor-pointer">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#e97730]">Shoppy</span>
+                    <span className="self-center text-3xl font-bold whitespace-nowrap text-[#e97730]">SHOPPY</span>
                 </span>
                 <div className="flex md:order-2">
-                    <button onClick={() => setIsDark(!isDark)} className="flex items-center justify-center w-10 h-10 mr-2 bg-[#d1d5db9a] rounded-full backdrop-blur-lg">
-                        {isDark ? <MdLightMode className="text-[#1d1d1d]" size={24} /> : <MdDarkMode className="text-[#383838]" size={24} />}
+                    <button onClick={() => {
+                        setIsDark(!isDark)
+                        isDark ? localStorage.setItem("darkMode", "true") : localStorage.setItem("darkMode", "false")
+
+                    }} className="flex items-center justify-center w-10 h-10 mr-2 bg-[#d1d5db9a] rounded-full backdrop-blur-lg">
+                        {localStorage.getItem("darkMode") === "true" ? <MdLightMode className="text-[#383838]" size={24} /> : <MdDarkMode className="text-[#383838]" size={24} />}
                     </button>
                     <Button1 onclick={() => navigate("/signin")} text="Sign In" />
                     <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
