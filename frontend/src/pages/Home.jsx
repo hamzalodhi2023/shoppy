@@ -1,7 +1,11 @@
+import Services from "../components/Services"
 import Slider from "../components/Slider"
 function Home() {
     return (
-        <Slider />
+        <>
+            <Slider />
+            <Services />
+        </>
     )
 }
 
