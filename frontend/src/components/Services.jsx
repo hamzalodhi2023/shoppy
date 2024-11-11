@@ -12,7 +12,7 @@ function Services() {
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-500 dark:bg-[#e97730] rounded-full">
                             <FaBolt className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white">Fast Delivery</h3>
+                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white text-[#383838]">Fast Delivery</h3>
                         <p className="text-center text-gray-600 dark:text-gray-300">Swift and reliable delivery service to meet your needs.</p>
                     </div>
 
@@ -20,7 +20,7 @@ function Services() {
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-green-500 dark:bg-[#e97730] rounded-full">
                             <FaClock className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white">24/7</h3>
+                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white text-[#383838]">24/7</h3>
                         <p className="text-center text-gray-600 dark:text-gray-300">Round-the-clock service and support whenever you need us.</p>
                     </div>
 
@@ -28,7 +28,7 @@ function Services() {
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-purple-500 dark:bg-[#e97730] rounded-full">
                             <FaCheckCircle className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white">Quality Products</h3>
+                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white text-[#383838]">Quality Products</h3>
                         <p className="text-center text-gray-600 dark:text-gray-300">Premium quality products that exceed your expectations.</p>
                     </div>
 
@@ -36,7 +36,7 @@ function Services() {
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-500 dark:bg-[#e97730] rounded-full">
                             <FaLock className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white">Trusted Platform</h3>
+                        <h3 className="mb-4 text-xl font-semibold text-center dark:text-white text-[#383838]">Trusted Platform</h3>
                         <p className="text-center text-gray-600 dark:text-gray-300">A secure and reliable platform you can count on.</p>
                     </div>
                 </div>
