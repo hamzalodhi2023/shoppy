@@ -14,8 +14,10 @@ function Error() {
                     Oops! {error.statusText}
                 </h2>
                 <p className="mb-8 text-xl text-gray-600">{error.error.message}</p>
-                <Button2 text={"Go Back"} onclick={() => navigate(-1)} />
-                <Button1 text={"Get Help"} onclick={() => navigate("/contact")} />
+                <span className="flex items-center justify-center gap-5">
+                    <Button2 text={"Go Back"} onclick={() => navigate(-1)} />
+                    <Button1 text={"Get Help"} onclick={() => navigate("/contact")} />
+                </span>
             </div>
         </div>
     );
