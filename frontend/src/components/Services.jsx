@@ -2,11 +2,12 @@ import { FaBolt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import Title from "./layout/ui/Title";
 function Services() {
     return (
         <section className="py-16 bg-gray-50 dark:bg-[#383838]">
             <div className="container px-4 mx-auto">
-                <h2 className="mb-12 text-4xl font-bold text-center text-[#383838] dark:text-white">OUR SERVICES</h2>
+                <Title text1={"OUR"} text2={"SERVICES"} />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     <div className="p-6 transition duration-300 transform bg-white dark:bg-[#383838] dark:border-[1px] dark:border-[#e97730] rounded-lg shadow-lg hover:scale-105">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-500 dark:bg-[#e97730] rounded-full">

@@ -6,6 +6,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background-color: white;
+}
+
 .active {
   border-bottom: 2px solid #e97730;
   color: #e97730;

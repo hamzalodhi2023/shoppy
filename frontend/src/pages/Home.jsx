@@ -1,3 +1,4 @@
+import LatestBlog from "../components/LatestBlog"
 import NewArrivals from "../components/NewArrivals"
 import Services from "../components/Services"
 import Slider from "../components/Slider"
@@ -9,6 +10,7 @@ function Home() {
             <Services />
             <NewArrivals />
             <Slogan />
+            <LatestBlog />
         </>
     )
 }
