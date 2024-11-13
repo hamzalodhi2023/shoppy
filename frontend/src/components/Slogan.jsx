@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 function Slogan() {
   return (
     <section
-      className="flex h-[540px] w-full flex-col items-start justify-center bg-cover bg-center px-8 py-16"
+      className="flex h-[540px] bg-[#383838] w-full flex-col items-start justify-center bg-cover bg-[70%] md:bg-center px-8 py-16"
       style={{ backgroundImage: "url('/images/slogan-section.png')" }}
     >
       <div className="z-10 max-w-3xl">
@@ -19,7 +19,7 @@ function Slogan() {
             }}
           />
         </h1>
-        <p className="mb-8 max-w-2xl text-justify text-white md:text-lg">
+        <p className="max-w-2xl mb-8 text-justify text-white md:text-lg">
           <span className="text-2xl font-semibold text-[#e97730]">Shoppy</span>{" "}
           is here to make every shopping journey unique, with a diverse
           selection of items that cover both the basics and those special extras
