@@ -2,7 +2,7 @@ import React from 'react'
 
 function Cards() {
     return (
-        <div className="min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[550px] rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] bg-white dark:bg-[#383838] dark:border-[#e97730] dark:border-[1px]">
+        <div className="min-h-[400px] min-w-[300px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[550px] rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] bg-white dark:bg-[#383838] dark:border-[#e97730] dark:border-[1px]">
             <div className="group relative w-full bg-green-700 rounded-xl h-[75%] overflow-hidden mb-5">
                 <img src="../../public/images/8.webp" alt="Product" className="absolute object-cover w-full h-full transition-transform duration-500 transform group-hover:scale-110" />
                 <img src="../../public/images/3.webp" alt="Product" className="absolute object-cover w-full h-full transition-all duration-500 group-hover:opacity-0" />

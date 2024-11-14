@@ -1,3 +1,4 @@
+import FeaturedProducts from "../components/FeaturedProducts"
 import LatestBlog from "../components/LatestBlog"
 import NewArrivals from "../components/NewArrivals"
 import Services from "../components/Services"
@@ -10,6 +11,7 @@ function Home() {
             <Services />
             <NewArrivals />
             <Slogan />
+            <FeaturedProducts />
             <LatestBlog />
         </>
     )
