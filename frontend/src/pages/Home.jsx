@@ -4,6 +4,7 @@ import NewArrivals from "../components/NewArrivals"
 import Services from "../components/Services"
 import Slider from "../components/Slider"
 import Slogan from "../components/Slogan"
+import Subscribe from "../components/Subscribe"
 function Home() {
     return (
         <>
@@ -13,6 +14,7 @@ function Home() {
             <Slogan />
             <FeaturedProducts />
             <LatestBlog />
+            <Subscribe />
         </>
     )
 }
