@@ -15,7 +15,7 @@ function Subscribe() {
                         <input
                             type="email"
                             placeholder="Enter Email"
-                            className="p-3 flex w-full rounded-md text-[#383838] outline-none dark:text-white bg-white shadow-md"
+                            className="p-3 flex w-full rounded-md text-[#383838] outline-none bg-white shadow-md"
                         />
                         <button className="bg-[#e97730] text-white rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3 hover:scale-105 duration-300">
                             Notify Me
