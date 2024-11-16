@@ -4,6 +4,8 @@ import Title from '../components/layout/ui/Title'
 
 function Signin() {
     const [isSignUp, setIsSignUp] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838] flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -73,14 +75,45 @@ function Signin() {
                         <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                             Password
                         </label>
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            autoComplete="current-password"
-                            required
-                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
-                        />
+                        <div className="relative">
+                            <input
+                                id="password"
+                                name="password"
+                                type={showPassword ? "text" : "password"}
+                                autoComplete="current-password"
+                                required
+                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5 text-gray-500 dark:text-gray-400"
+                            >
+                                {showPassword ? "Hide" : "Show"}
+                            </button>
+                        </div>
+                    </div>
+                    <div className={`${isSignUp ? "block" : "hidden"}`}>
+                        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
+                            Confirm Password
+                        </label>
+                        <div className="relative">
+                            <input
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                type={showConfirmPassword ? "text" : "password"}
+                                autoComplete="current-password"
+                                required
+                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                className="absolute inset-y-0 right-0 flex items-center pr-3 text-sm leading-5 text-gray-500 dark:text-gray-400"
+                            >
+                                {showConfirmPassword ? "Hide" : "Show"}
+                            </button>
+                        </div>
                     </div>
                     <div>
                         <button
