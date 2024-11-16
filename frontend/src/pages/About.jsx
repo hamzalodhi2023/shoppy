@@ -1,8 +1,10 @@
+import Hero from "../components/Hero"
 import Title from "../components/layout/ui/Title"
 
 function About() {
     return (
         <div className="min-h-screen bg-white dark:bg-[#383838] transition-colors duration-300">
+            <Hero img={"/images/about-us.jpg"} heading="Your Shopping Experience Starts Here" paragraph="We’re here to make shopping effortless, enjoyable, and all about you. Explore our handpicked collections, designed to fit your lifestyle and budget. Let’s make your shopping journey unforgettable!" />
             <div className="container px-4 py-16 mx-auto">
                 <div className="max-w-4xl mx-auto">
                     <Title text1={"ABOUT"} text2={"US"} />

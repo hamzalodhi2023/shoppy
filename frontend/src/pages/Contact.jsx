@@ -1,10 +1,12 @@
+import Hero from "../components/Hero"
 import { Button1 } from "../components/layout/ui/Button"
 import Title from "../components/layout/ui/Title"
 
 function Contact() {
     return (
-        <div className="min-h-screen bg-white dark:bg-[#383838] flex items-center justify-center px-4 py-8">
-            <div className="max-w-3xl w-full bg-gray-100 dark:bg-[#2a2a2a] rounded-lg shadow-lg p-6 md:p-8">
+        <div className="min-h-screen bg-white flex-col dark:bg-[#383838] flex items-center justify-center">
+            <Hero img={"/images/contact-us.png"} heading="Get in Touch with Us!" paragraph="At Shoppy, your satisfaction is our top priority. Whether you have a question about your order, need help with a product, or just want to share feedback, we’re here for you." />
+            <div className="max-w-3xl my-5 w-full bg-gray-100 dark:bg-[#2a2a2a] rounded-lg shadow-lg p-6 md:p-8">
                 <Title text1={"CONTACT"} text2={"US"} />
                 <form className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
