@@ -12,7 +12,7 @@ function Slogan() {
         <h1 className="mb-2 text-3xl font-bold text-[#e97730] md:text-4xl lg:text-5xl">
           <Typewriter
             options={{
-              strings: ["FROM ESSENTIALS TO EXTRAS, SHOPPY HAS ITS ALL."],
+              strings: ["FROM ESSENTIALS TO EXTRAS, SHOPPY HAS ITS ALL"],
               loop: true,
               autoStart: true,
               cursor: "_",

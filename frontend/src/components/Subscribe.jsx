@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button1 } from './layout/ui/Button'
 
 function Subscribe() {
     return (
@@ -11,15 +12,13 @@ function Subscribe() {
                     <p className="text-[#383838] dark:text-gray-300">Sign up to our newsletter and stay up to date.</p>
                 </div>
                 <div className="my-4">
-                    <div className="flex flex-col items-center justify-between w-full sm:flex-row">
+                    <div className="flex flex-col items-center justify-between w-full gap-5 sm:flex-row">
                         <input
                             type="email"
                             placeholder="Enter Email"
-                            className="p-3 flex w-full rounded-md text-[#383838] outline-none bg-white shadow-md"
+                            className="w-full bg-white px-4 py-2 rounded-lg border dark:border-gray-600 focus:outline-none focus:border-[#e97730] dark:focus:border-[#e97730] dark:bg-[#383838] dark:text-gray-200"
                         />
-                        <button className="bg-[#e97730] text-white rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3 hover:scale-105 duration-300">
-                            Notify Me
-                        </button>
+                        <Button1 text={'Notify Me'} />
                     </div>
                     <p className="text-[#383838] dark:text-gray-300">
                         We care about the protection of your data. Read our{' '}
