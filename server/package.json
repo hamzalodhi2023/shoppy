@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "server": "set DEBUG=server:* & npm start"
+    "server": "set DEBUG=development:* & npm start"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.4.5",
     "express": "~4.16.1",
+    "mongoose": "^8.8.1",
     "morgan": "~1.9.1",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "validator": "^13.12.0"
   }
 }

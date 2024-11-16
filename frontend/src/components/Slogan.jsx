@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 function Slogan() {
   return (
     <section
-      className="flex h-[540px] dark:bg-[#383838] w-full flex-col items-start justify-center bg-cover bg-[70%] md:bg-center px-8 py-16"
+      className="flex h-[540px] w-full flex-col items-start justify-center bg-cover bg-[70%] px-8 py-16 dark:bg-[#383838] md:bg-center"
       style={{ backgroundImage: "url('/images/slogan-section.png')" }}
     >
       <div className="z-10 max-w-3xl">
