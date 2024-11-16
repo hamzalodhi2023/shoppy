@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Title from '../components/layout/ui/Title'
 
 function Signin() {
     const [isSignUp, setIsSignUp] = useState(false)
@@ -9,7 +10,7 @@ function Signin() {
             <div className="max-w-md w-full space-y-8 bg-white dark:bg-[#2a2a2a] p-8 rounded-lg shadow-lg">
                 <div>
                     <h2 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white">
-                        {isSignUp ? 'Create Account' : 'Sign in to your account'}
+                        {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                     </h2>
                 </div>
                 <form className="mt-8 space-y-6">
@@ -25,7 +26,7 @@ function Signin() {
                                         name="firstName"
                                         type="text"
                                         required
-                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                     />
                                 </div>
                                 <div>
@@ -37,7 +38,7 @@ function Signin() {
                                         name="lastName"
                                         type="text"
                                         required
-                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                     />
                                 </div>
                             </div>
@@ -50,7 +51,7 @@ function Signin() {
                                     name="phone"
                                     type="tel"
                                     required
-                                    className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                    className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                 />
                             </div>
                         </div>
@@ -65,7 +66,7 @@ function Signin() {
                             type="email"
                             autoComplete="email"
                             required
-                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                         />
                     </div>
                     <div>
@@ -78,13 +79,13 @@ function Signin() {
                             type="password"
                             autoComplete="current-password"
                             required
-                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                         />
                     </div>
                     <div>
                         <button
                             type="submit"
-                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#e97730] hover:bg-[#d66a2b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#e97730]"
+                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#e97730] hover:bg-[#d66a2b] focus:outline-none dark:focus:border-[#e97730] focus:ring-2 focus:ring-offset-2 focus:ring-[#e97730]"
                         >
                             {isSignUp ? 'Sign up' : 'Sign in'}
                         </button>
