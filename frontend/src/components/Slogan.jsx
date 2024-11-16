@@ -5,21 +5,21 @@ import Typewriter from "typewriter-effect";
 function Slogan() {
   return (
     <section
-      className="flex h-[540px] w-full flex-col items-start justify-center bg-[#383838] bg-cover bg-[70%] px-8 py-16 md:bg-center"
+      className="flex h-[540px] w-full flex-col items-start justify-center bg-cover bg-[70%] px-8 py-16 dark:bg-[#383838] md:bg-center"
       style={{ backgroundImage: "url('/images/slogan-section.png')" }}
     >
       <div className="z-10 max-w-3xl">
         <h1 className="mb-2 text-3xl font-bold text-[#e97730] md:text-4xl lg:text-5xl">
           <Typewriter
             options={{
-              strings: ["FROM ESSENTIALS TO EXTRAS, SHOPPY HAS ITS ALL."],
+              strings: ["FROM ESSENTIALS TO EXTRAS, SHOPPY HAS ITS ALL"],
               loop: true,
               autoStart: true,
               cursor: "_",
             }}
           />
         </h1>
-        <p className="mb-8 max-w-2xl text-justify text-white md:text-lg">
+        <p className="max-w-2xl mb-8 text-justify text-white md:text-lg">
           <span className="text-2xl font-semibold text-[#e97730]">Shoppy</span>{" "}
           is here to make every shopping journey unique, with a diverse
           selection of items that cover both the basics and those special extras

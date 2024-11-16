@@ -53,7 +53,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={routes} />
-        <ReactQueryDevtools initialIsOpen={false} />
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   )

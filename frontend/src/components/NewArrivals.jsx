@@ -1,23 +1,22 @@
-import Cards from "./layout/ui/Cards";
+import Cards from "./layout/ui/Cards"
+import Title from "./layout/ui/Title"
 
 function NewArrivals() {
-  return (
-    <div className="w-full px-4 py-16 dark:bg-[#383838]">
-      <div className="mx-auto max-w-[1240px]">
-        <h2 className="mb-8 text-center text-3xl font-bold text-[#383838] dark:text-white md:text-4xl">
-          NEW ARRIVALS
-        </h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* cards Start */}
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          {/* cards End */}
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <div className="w-full py-16 px-4 dark:bg-[#383838]">
+            <div className="max-w-[1240px] mx-auto">
+                <Title text1={"NEW"} text2={"ARRIVALS"} />
+                <div className="flex flex-wrap gap-6 justify-evenly">
+                    {/* cards Start */}
+                    <Cards />
+                    <Cards />
+                    <Cards />
+                    <Cards />
+                    {/* cards End */}
+                </div>
+            </div>
+        </div >
+    )
 }
 
 export default NewArrivals;
