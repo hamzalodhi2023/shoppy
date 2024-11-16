@@ -46,11 +46,14 @@ function Signin() {
                             </div>
                             <div className='mt-4'>
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-                                    Phone Number
+                                    Mobile Number
                                 </label>
                                 <input
-                                    id="phone"
-                                    name="phone"
+                                    id="mobile"
+                                    name="mobile"
+                                    maxLength={11}
+                                    minLength={11}
+                                    placeholder='01234567890'
                                     type="tel"
                                     required
                                     className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
