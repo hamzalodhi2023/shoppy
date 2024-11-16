@@ -1,10 +1,8 @@
 // Import required modules
 const mongoose = require("mongoose");
-const debug = require("debug");
+const debug = require("debug")("development:config:mongodb-connection");
 
 // Create a debug instance for logging
-const debugging = debug("development:config:mongodb-connection");
-
 /**
  * Establishes a connection to the MongoDB database
  * @async
@@ -16,10 +14,10 @@ const connectDB = async () => {
     // Attempt to connect to the MongoDB database
     await mongoose.connect(process.env.MONGODB_URI);
     // Log successful connection
-    debugging("Database connection established!");
+    debug("Database connection established!");
   } catch (error) {
     // Log error message if connection fails
-    debugging("Error connecting to database:", error.message);
+    debug("Error connecting to database:", error.message);
     // Rethrow the error for handling by the caller
     throw error;
   }
