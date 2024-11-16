@@ -2,6 +2,10 @@
 
 /**
  * Module dependencies.
+ * @requires express - Express.js web application framework
+ * @requires debug - Debug utility for development logging
+ * @requires http - Node.js HTTP server module
+ * @requires dotenv - Environment variable loader
  */
 
 var app = require("../app");
@@ -11,19 +15,23 @@ require("dotenv").config();
 
 /**
  * Get port from environment and store in Express.
+ * Prioritizes PORT from environment variables, defaults to 3000 if not set
+ * @constant {number|string} port - Normalized port value
  */
 
 var port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
 /**
- * Create HTTP server.
+ * Create HTTP server instance.
+ * @constant {http.Server} server - HTTP server instance
  */
 
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Initialize server to listen on specified port across all network interfaces.
+ * Sets up error and listening event handlers.
  */
 
 server.listen(port);
@@ -31,7 +39,10 @@ server.on("error", onError);
 server.on("listening", onListening);
 
 /**
- * Normalize a port into a number, string, or false.
+ * Normalize port value to ensure valid server configuration.
+ * @param {string|number} val - Port value to normalize
+ * @returns {number|string|boolean} - Normalized port value or false if invalid
+ * @throws {Error} - Throws error for invalid port values
  */
 
 function normalizePort(val) {
@@ -51,7 +62,10 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Error event handler for HTTP server.
+ * Provides specific error handling for common server issues.
+ * @param {Error} error - Error object from server
+ * @throws {Error} - Rethrows error for unhandled cases
  */
 
 function onError(error) {
@@ -77,7 +91,10 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Listening event handler for HTTP server.
+ * Logs server address information using debug utility.
+ * @function
+ * @returns {void}
  */
 
 function onListening() {

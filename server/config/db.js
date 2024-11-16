@@ -1,27 +1,48 @@
-// Import required modules
+/**
+ * @fileoverview MongoDB database connection configuration module.
+ * @module config/db
+ * @requires mongoose
+ * @requires debug
+ */
+
+// Import external dependencies
 const mongoose = require("mongoose");
 const debug = require("debug")("development:config:mongodb-connection");
 
-// Create a debug instance for logging
 /**
- * Establishes a connection to the MongoDB database
+
+ * Establishes a connection to the MongoDB database using the provided URI from environment variables.
+ * Implements mongoose's connection method with default configuration options.
+ * 
  * @async
  * @function connectDB
- * @throws {Error} If connection fails
+
+ * @throws {Error} Throws an error if the database connection fails
+ * @returns {Promise<void>} Resolves when connection is successful
+ * 
+ * @example
+ * try {
+ *   await connectDB();
+ *   // Database connection successful
+ * } catch (error) {
+ *   // Handle connection error
+ * }
  */
 const connectDB = async () => {
   try {
-    // Attempt to connect to the MongoDB database
+    // Attempt to establish MongoDB connection using environment variable URI
     await mongoose.connect(process.env.MONGODB_URI);
-    // Log successful connection
+
+    // Log successful connection status for debugging purposes
     debug("Database connection established!");
   } catch (error) {
-    // Log error message if connection fails
+    // Log detailed error information for debugging and monitoring
     debug("Error connecting to database:", error.message);
-    // Rethrow the error for handling by the caller
+
+    // Propagate error to calling function for proper error handling
     throw error;
   }
 };
 
-// Export the connectDB function
+// Export the connection function for use in other modules
 module.exports = connectDB;
