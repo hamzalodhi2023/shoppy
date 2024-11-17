@@ -84,8 +84,8 @@ module.exports = async (req, res) => {
 
     // Create new user in database
     const newUser = await userModel.create({
-      firstname: firstName,
-      lastname: lastName,
+      firstName,
+      lastName,
       email,
       password: hashedPassword,
       mobile,
