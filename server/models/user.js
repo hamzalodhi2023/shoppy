@@ -5,12 +5,12 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema(
   {
     // User's first name - Required field
-    firstname: {
+    firstName: {
       type: String,
       required: true,
     },
     // User's last name - Required field
-    lastname: {
+    lastName: {
       type: String,
       required: true,
     },
