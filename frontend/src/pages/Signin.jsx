@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Title from '../components/layout/ui/Title'
-import { createUserMutate } from "../api/FetchUsers"
+import { CreateUserMutation } from "../api/FetchUsers"
 
 function Signin() {
 
@@ -22,7 +22,7 @@ function Signin() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(signUpData)
-        createUserMutate(signUpData)
+        CreateUserMutation.mutate(signUpData)
         setSignUpData({
             firstName: "",
             lastName: "",
