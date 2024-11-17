@@ -10,13 +10,9 @@ export const CreateUser = async (signUpData) => {
     console.log(signUpData)
     try {
         const res = await api.post("/users/create", { ...signUpData });
-        if (res.status === 201) {
-            return res.data;
-        } else {
-            throw new Error("Failed to update post");
-        }
+        return res.data;
     } catch (error) {
-        console.error("Error creating user:", error);
+        console.log("Error creating user:", error);
         throw error;
     }
 };
