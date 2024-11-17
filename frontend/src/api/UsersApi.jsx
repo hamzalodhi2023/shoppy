@@ -16,7 +16,7 @@ export const CreateUser = async (signUpData) => {
             throw new Error("Failed to update post");
         }
     } catch (error) {
-        console.error("Error creating user:", error);
+        console.log("Error creating user:", error);
         throw error;
     }
 };
