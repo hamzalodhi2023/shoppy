@@ -3,6 +3,7 @@ import { CreateUser } from "../api/UsersApi";
 import React, { useState } from 'react'
 import Title from '../components/layout/ui/Title'
 import { useCreateUserMutation } from "../api/FetchUsers";
+import { Button1 } from "../components/layout/ui/Button";
 
 function Signin() {
     const { mutate: createUser } = useCreateUserMutation();
@@ -37,12 +38,12 @@ function Signin() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-[#383838] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-100 dark:bg-[#383838] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-10">
             <div className="max-w-md w-full space-y-8 bg-white dark:bg-[#2a2a2a] p-8 rounded-lg shadow-lg">
                 <div>
                     {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                 </div>
-                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6 ">
                     {isSignUp && (
                         <div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -158,12 +159,11 @@ function Signin() {
                         </div>
                     </div>
                     <div>
-                        <button
-                            type="submit"
-                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#e97730] hover:bg-[#d66a2b] focus:outline-none dark:focus:border-[#e97730] focus:ring-2 focus:ring-offset-2 focus:ring-[#e97730]"
-                        >
-                            {isSignUp ? 'Sign up' : 'Sign in'}
-                        </button>
+                        <Button1
+                            type={"submit"}
+                            text={isSignUp ? 'Sign up' : 'Sign in'}
+                            size={"full"}
+                        />
                     </div>
                 </form>
                 <div className="text-center">

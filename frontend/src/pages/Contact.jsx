@@ -39,7 +39,7 @@ function Contact() {
                             className="w-full px-4 py-2 rounded-lg bg-white border dark:border-gray-600 focus:outline-none dark:focus:border-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:text-gray-200"
                         ></textarea>
                     </div>
-                    <Button1 text={"Send Message"} />
+                    <Button1 text={"Send Message"} size={"full"} />
                 </form>
             </div>
         </div>

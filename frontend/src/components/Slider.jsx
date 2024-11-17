@@ -51,7 +51,7 @@ function Slider() {
                   Find everything you need in one place, from trending styles to
                   everyday essentials. Get it shipped directly to your door!
                 </p>
-                <Button1 onclick={() => navigate("/shop")} text="Shop Now" />
+                <Button1 onclick={() => navigate("/shop")} text="Shop Now" size={"fit"} />
               </div>
             </div>
             <div className="items-end hidden w-1/2 h-full justify-normal lg:flex">
@@ -81,7 +81,7 @@ function Slider() {
                   Explore thousands of products across all categories, carefully
                   selected for quality and value.
                 </p>
-                <Button1 onclick={() => navigate("/shop")} text="Shop Now" />
+                <Button1 onclick={() => navigate("/shop")} text="Shop Now" size={"fit"} />
               </div>
             </div>
             <div className="items-end hidden w-1/2 h-full justify-normal lg:flex">

@@ -18,7 +18,7 @@ function Subscribe() {
                             placeholder="Enter Email"
                             className="w-full bg-white px-4 py-2 rounded-lg border dark:border-gray-600 focus:outline-none focus:border-[#e97730] dark:focus:border-[#e97730] dark:bg-[#383838] dark:text-gray-200"
                         />
-                        <Button1 text={'Notify Me'} />
+                        <Button1 text={'Notify Me'} size={"fit"} />
                     </div>
                     <p className="text-[#383838] dark:text-gray-300">
                         We care about the protection of your data. Read our{' '}
