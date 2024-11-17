@@ -10,11 +10,32 @@ export const useCreateUserMutation = (onSuccessCallback) =>
         mutationFn: (signUpData) => CreateUser(signUpData),
         onSuccess: (data) => {
             console.log(data)
-            toast.success(data.message);
+            if (localStorage.getItem("darkMode") === "true") {
+                toast.success(data.message, {
+                    theme: "dark",
+                });
+            } else {
+                toast.success(data.message, {
+                    theme: "light",
+                });
+
+            }
+            // toast.success(data.message, {
+            //     theme: "light",
+            // });
             onSuccessCallback();
         },
         onError: (error) => {
             console.log(error.response.data.message)
-            toast.error(error.response.data.message);
+            if (localStorage.getItem("darkMode") === "true") {
+                toast.error(error.response.data.message, {
+                    theme: "dark",
+                });
+            } else {
+                toast.error(error.response.data.message, {
+                    theme: "light",
+                });
+
+            }
         },
     });
