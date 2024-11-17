@@ -36,16 +36,10 @@ const userSchema = new Schema(
     // User's CNIC (National ID) - Must be unique and exactly 12 characters
     cnic: {
       type: String,
-      unique: true,
-      min: 12,
-      max: 12,
     },
     // User's mobile number - Must be unique and exactly 11 characters
     mobile: {
       type: String,
-      unique: true,
-      min: 11,
-      max: 11,
     },
     // User's state/province information
     state: {
