@@ -3,7 +3,17 @@ import { Link } from 'react-router-dom'
 import Title from '../components/layout/ui/Title'
 
 function Signin() {
+    const [signUpData, setSignUpData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+    })
+
+
+    //` For sign in and sign up
     const [isSignUp, setIsSignUp] = useState(false)
+    //` For password show and hide
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
@@ -83,6 +93,7 @@ function Signin() {
                                 id="password"
                                 name="password"
                                 type={showPassword ? "text" : "password"}
+                                minLength={8}
                                 autoComplete="current-password"
                                 required
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
@@ -105,6 +116,7 @@ function Signin() {
                                 id="confirmPassword"
                                 name="confirmPassword"
                                 type={showConfirmPassword ? "text" : "password"}
+                                minLength={8}
                                 autoComplete="current-password"
                                 required
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
