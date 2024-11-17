@@ -13,8 +13,8 @@ const passwordValidate = require("../../utils/bcrypt");
  * @async
  * @param {Object} req - Express request object
  * @param {Object} req.body - Request body containing user details
- * @param {string} req.body.firstname - User's first name
- * @param {string} req.body.lastname - User's last name
+ * @param {string} req.body.firstName - User's first name
+ * @param {string} req.body.lastName - User's last name
  * @param {string} req.body.email - User's email address
  * @param {string} req.body.password - User's password
  * @param {number} req.body.mobile - User's mobile number
@@ -25,10 +25,10 @@ const passwordValidate = require("../../utils/bcrypt");
 module.exports = async (req, res) => {
   try {
     // Extract user details from request body
-    const { firstname, lastname, email, password, mobile } = req.body;
+    const { firstName, lastName, email, password, mobile } = req.body;
 
     // Validate required fields
-    if (!firstname || !lastname || !email || !password || !mobile) {
+    if (!firstName || !lastName || !email || !password || !mobile) {
       debug("Please fill in all fields");
       return res.status(404).json({
         success: true,
@@ -84,8 +84,8 @@ module.exports = async (req, res) => {
 
     // Create new user in database
     const newUser = await userModel.create({
-      firstname,
-      lastname,
+      firstname: firstName,
+      lastname: lastName,
       email,
       password: hashedPassword,
       mobile,
