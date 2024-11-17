@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Title from '../components/layout/ui/Title'
+import { createUserMutate } from "../api/FetchUsers"
 
 function Signin() {
+
     //` Sign Up Form Data
     const [signUpData, setSignUpData] = useState({
         firstName: "",
@@ -21,6 +22,7 @@ function Signin() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(signUpData)
+        createUserMutate(signUpData)
         setSignUpData({
             firstName: "",
             lastName: "",
