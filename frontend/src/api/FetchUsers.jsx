@@ -9,7 +9,6 @@ export const useCreateUserMutation = (onSuccessCallback) =>
     useMutation({
         mutationFn: (signUpData) => CreateUser(signUpData),
         onSuccess: (data) => {
-            console.log(data)
             if (localStorage.getItem("darkMode") === "true") {
                 toast.success(data.message, {
                     theme: "dark",
@@ -26,7 +25,6 @@ export const useCreateUserMutation = (onSuccessCallback) =>
             onSuccessCallback();
         },
         onError: (error) => {
-            console.log(error.response.data.message)
             if (localStorage.getItem("darkMode") === "true") {
                 toast.error(error.response.data.message, {
                     theme: "dark",

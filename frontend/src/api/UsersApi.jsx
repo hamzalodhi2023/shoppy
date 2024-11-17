@@ -10,7 +10,6 @@ export const CreateUser = async (signUpData) => {
         const res = await api.post("/create", signUpData);
         return res.data;
     } catch (error) {
-        console.log("Error creating user:", error);
         throw error;
     }
 };
