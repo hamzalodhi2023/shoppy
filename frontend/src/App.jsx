@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 import Signin from "./pages/Signin";
+import { ToastContainer } from 'react-toastify';
 const queryClient = new QueryClient();
 function App() {
   let routes = createBrowserRouter([
@@ -48,6 +49,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={routes} />
+        <ToastContainer />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>

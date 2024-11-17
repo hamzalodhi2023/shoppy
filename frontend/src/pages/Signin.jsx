@@ -1,9 +1,8 @@
-import { useMutation } from "@tanstack/react-query";
-import { CreateUser } from "../api/UsersApi";
 import React, { useState } from 'react'
 import Title from '../components/layout/ui/Title'
 import { useCreateUserMutation } from "../api/FetchUsers";
 import { Button1 } from "../components/layout/ui/Button";
+
 
 function Signin() {
     const { mutate: createUser } = useCreateUserMutation();
@@ -27,6 +26,14 @@ function Signin() {
     const handleSubmit = (e) => {
         e.preventDefault();
         createUser(signUpData);
+
+        setSignUpData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            mobile: "",
+        });
 
     };
 
