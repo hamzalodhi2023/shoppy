@@ -1,8 +1,16 @@
+import { useMutation } from "@tanstack/react-query";
+import { CreateUser } from "../api/UsersApi";
 import React, { useState } from 'react'
 import Title from '../components/layout/ui/Title'
-import { CreateUserMutation } from "../api/FetchUsers"
 
 function Signin() {
+
+    const CreateUserMutation = useMutation({
+        mutationFn: (user) => CreateUser(user),
+        onSuccess: (data) => {
+            console.log(data)
+        }
+    });
 
     //` Sign Up Form Data
     const [signUpData, setSignUpData] = useState({
@@ -18,6 +26,7 @@ function Signin() {
         const { name, value } = e.target;
         setSignUpData((prevData) => ({ ...prevData, [name]: value }));
     };
+
     //` Handle Submit Function
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -19,7 +19,13 @@ var usersRouter = require("./routes/users");
 var app = express();
 
 // Configure middleware
-app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
+app.use(
+  cors({
+    origin: ["http://localhost:5173"], // Allow requests from this origin
+    credentials: true, // Allow sending cookies with requests
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow these HTTP methods
+  })
+); // Enable Cross-Origin Resource Sharing (CORS)
 app.use(logger("dev")); // Enable request logging for development
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded request bodies
