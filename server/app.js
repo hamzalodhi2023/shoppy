@@ -6,6 +6,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var cors = require("cors");
 
 // Initialize database connection
 require("./config/db")();
@@ -18,6 +19,7 @@ var usersRouter = require("./routes/users");
 var app = express();
 
 // Configure middleware
+app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
 app.use(logger("dev")); // Enable request logging for development
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded request bodies
