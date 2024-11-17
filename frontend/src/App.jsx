@@ -9,7 +9,6 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
 const queryClient = new QueryClient();
 function App() {
   let routes = createBrowserRouter([
@@ -41,10 +40,6 @@ function App() {
         {
           path: "/signin",
           element: <Signin />
-        },
-        {
-          path: "/signup",
-          element: <Signup />
         }
       ]
     }
@@ -53,7 +48,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={routes} />
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   )
