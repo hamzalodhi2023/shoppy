@@ -6,7 +6,7 @@ import Title from '../components/layout/ui/Title'
 function Signin() {
 
     const CreateUserMutation = useMutation({
-        mutationFn: (user) => CreateUser(user),
+        mutationFn: (signUpData) => CreateUser(signUpData),
         onSuccess: (data) => {
             console.log(data)
         }
@@ -30,15 +30,8 @@ function Signin() {
     //` Handle Submit Function
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(signUpData)
+        // console.log(signUpData)
         CreateUserMutation.mutate(signUpData)
-        setSignUpData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-            mobile: "",
-        })
     };
 
 
