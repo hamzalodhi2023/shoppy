@@ -15,8 +15,8 @@ function Error() {
                 </h2>
                 <p className="mb-8 text-xl text-gray-600">{error.error.message}</p>
                 <span className="flex items-center justify-center gap-5">
-                    <Button2 text={"Go Back"} onclick={() => navigate(-1)} />
-                    <Button1 text={"Get Help"} onclick={() => navigate("/contact")} />
+                    <Button2 text={"Go Back"} onclick={() => navigate(-1)} size={"fit"} />
+                    <Button1 text={"Get Help"} onclick={() => navigate("/contact")} size={"fit"} />
                 </span>
             </div>
         </div>

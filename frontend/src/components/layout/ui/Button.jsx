@@ -8,14 +8,13 @@ export const Button1 = ({ text, onclick, size, type }) => {
         >
             {text}
         </button>
-        // <button onClick={onclick} className="btn w-fit text-white border-none inline-block transition duration-300 ease-in-out bg-[#e97730] hover:bg-[#ff8f34]">
-        //     {text}
-        // </button>
     )
 }
 export const Button2 = ({ text, onclick, size }) => {
     return (
-        <button onClick={onclick} className="btn w-fit text-white border-none inline-block transition duration-300 ease-in-out bg-[#383838] hover:bg-[#5e5e5e]">
+        <button
+            onClick={onclick}
+            className={`btn w-${size} bg-gradient-to-b from-[#747474] to-[#383838] text-white rounded-md shadow-md border-none hover:shadow-[rgba(56,56,56,0.5)_0_3px_8px] h-10 px-5`}>
             {text}
         </button>
     )
