@@ -5,7 +5,6 @@ import { Button1 } from "../components/layout/ui/Button";
 
 
 function Signin() {
-    const { mutate: createUser } = useCreateUserMutation();
 
     //` Sign Up Form Data
     const [signUpData, setSignUpData] = useState({
@@ -15,6 +14,18 @@ function Signin() {
         password: "",
         mobile: "",
     })
+    // ` Reset Sign Up Form Data callBack Function
+    const resetSignUpData = () => {
+        setSignUpData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            mobile: "",
+        });
+    };
+    //` Sign Up Form Mutation
+    const { mutate: createUser } = useCreateUserMutation(resetSignUpData);
 
     //` Handle Change Function
     const handleChange = (e) => {
@@ -26,15 +37,6 @@ function Signin() {
     const handleSubmit = (e) => {
         e.preventDefault();
         createUser(signUpData);
-
-        setSignUpData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-            mobile: "",
-        });
-
     };
 
 
@@ -50,7 +52,7 @@ function Signin() {
                 <div>
                     {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                 </div>
-                <form onSubmit={handleSubmit} className="space-y-6 ">
+                <form autoComplete='off' onSubmit={handleSubmit} className="space-y-6 ">
                     {isSignUp && (
                         <div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -110,7 +112,6 @@ function Signin() {
                             id="email"
                             name="email"
                             type="email"
-                            autoComplete="email"
                             value={signUpData.email}
                             onChange={handleChange}
                             required
@@ -127,7 +128,6 @@ function Signin() {
                                 name="password"
                                 type={showPassword ? "text" : "password"}
                                 minLength={8}
-                                autoComplete="current-password"
                                 value={signUpData.password}
                                 onChange={handleChange}
                                 required
@@ -152,7 +152,6 @@ function Signin() {
                                 name="confirmPassword"
                                 type={showConfirmPassword ? "text" : "password"}
                                 minLength={8}
-                                autoComplete="current-password"
                                 required
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                             />

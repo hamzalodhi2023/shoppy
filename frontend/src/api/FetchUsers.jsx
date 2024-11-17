@@ -5,12 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-export const useCreateUserMutation = () =>
+export const useCreateUserMutation = (onSuccessCallback) =>
     useMutation({
         mutationFn: (signUpData) => CreateUser(signUpData),
         onSuccess: (data) => {
             console.log(data)
             toast.success(data.message);
+            onSuccessCallback();
         },
         onError: (error) => {
             console.log(error.response.data.message)
