@@ -22,11 +22,14 @@ const debug = require("debug")("development:controllers:dropdowns:create.js");
  */
 module.exports = async (req, res) => {
   try {
+    // Extract id from request parameters
+    const { id } = req.params;
+
     // Extract required fields from request body
-    const { name, values } = req.body;
+    const { values } = req.body;
 
     // Check if dropdown exists in database
-    const dropdown = await dropdownModel.findOne({ name });
+    const dropdown = await dropdownModel.findById(id);
 
     // Return error if dropdown not found
     if (!dropdown) {
@@ -42,7 +45,7 @@ module.exports = async (req, res) => {
 
     // Update dropdown with new values and return updated document
     const updatedDropdown = await dropdownModel.findByIdAndUpdate(
-      dropdown._id,
+      id,
       { values: newValues },
       { new: true }
     );
