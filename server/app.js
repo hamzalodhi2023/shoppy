@@ -14,6 +14,7 @@ require("./config/db")();
 // Import route handlers
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const dropdownRouter = require("./routes/dropdowns");
 
 // Create Express application instance
 var app = express();
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files f
 // Register route handlers
 app.use("/", indexRouter); // Mount index routes at root path
 app.use("/users", usersRouter); // Mount user routes at /users path
+app.use("/dropdowns", dropdownRouter); // Mount dropdown routes at /dropdowns path
 
 // Export Express application for use in other modules
 module.exports = app;
