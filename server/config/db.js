@@ -23,9 +23,9 @@ const debug = require("debug")("development:config:mongodb-connection");
  * @example
  * try {
  *   await connectDB();
- *   // Database connection successful
+ *   Database connection successful
  * } catch (error) {
- *   // Handle connection error
+ *   Handle connection error
  * }
  */
 const connectDB = async () => {
