@@ -3,12 +3,32 @@ import { Link } from 'react-router-dom'
 import Title from '../components/layout/ui/Title'
 
 function Signin() {
+    //` Sign Up Form Data
     const [signUpData, setSignUpData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
+        mobile: "",
     })
+
+    //` Handle Change Function
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setSignUpData((prevData) => ({ ...prevData, [name]: value }));
+    };
+    //` Handle Submit Function
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(signUpData)
+        setSignUpData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            mobile: "",
+        })
+    };
 
 
     //` For sign in and sign up
@@ -21,11 +41,9 @@ function Signin() {
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838] flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8 bg-white dark:bg-[#2a2a2a] p-8 rounded-lg shadow-lg">
                 <div>
-                    <h2 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white">
-                        {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
-                    </h2>
+                    {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                 </div>
-                <form className="mt-8 space-y-6">
+                <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                     {isSignUp && (
                         <div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -37,6 +55,8 @@ function Signin() {
                                         id="firstName"
                                         name="firstName"
                                         type="text"
+                                        value={signUpData.firstName}
+                                        onChange={handleChange}
                                         required
                                         className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                     />
@@ -49,6 +69,8 @@ function Signin() {
                                         id="lastName"
                                         name="lastName"
                                         type="text"
+                                        value={signUpData.lastName}
+                                        onChange={handleChange}
                                         required
                                         className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                     />
@@ -65,6 +87,8 @@ function Signin() {
                                     minLength={11}
                                     placeholder='01234567890'
                                     type="tel"
+                                    value={signUpData.mobile}
+                                    onChange={handleChange}
                                     required
                                     className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                                 />
@@ -80,6 +104,8 @@ function Signin() {
                             name="email"
                             type="email"
                             autoComplete="email"
+                            value={signUpData.email}
+                            onChange={handleChange}
                             required
                             className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                         />
@@ -95,6 +121,8 @@ function Signin() {
                                 type={showPassword ? "text" : "password"}
                                 minLength={8}
                                 autoComplete="current-password"
+                                value={signUpData.password}
+                                onChange={handleChange}
                                 required
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                             />
