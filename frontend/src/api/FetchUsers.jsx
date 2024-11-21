@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { CreateUser } from "./UsersApi";
+import { CreateUser, Login } from "./UsersApi";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,9 +36,9 @@ export const useCreateUserMutation = (onSuccessCallback) =>
     });
 
 // ` Login User Mutation
-export const useLoginUserMutation = (onSuccessCallback) =>
+export const useLoginUserMutation = () =>
     useMutation({
-        mutationFn: (signUpData) => CreateUser(signUpData),
+        mutationFn: (loginData) => Login(loginData),
         onSuccess: (data) => {
             if (localStorage.getItem("darkMode") === "true") {
                 toast.success(data.message, {
@@ -48,9 +48,7 @@ export const useLoginUserMutation = (onSuccessCallback) =>
                 toast.success(data.message, {
                     theme: "light",
                 });
-
             }
-            onSuccessCallback();
         },
         onError: (error) => {
             if (localStorage.getItem("darkMode") === "true") {
