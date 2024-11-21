@@ -13,6 +13,7 @@ function Signin() {
         email: "",
         password: "",
         mobile: "",
+        confirmPassword: "",
     })
     // ` Reset Sign Up Form Data callBack Function
     const resetSignUpData = () => {
@@ -22,6 +23,7 @@ function Signin() {
             email: "",
             password: "",
             mobile: "",
+            confirmPassword: "",
         });
     };
     //` Sign Up Form Mutation
@@ -39,12 +41,13 @@ function Signin() {
         createUser(signUpData);
     };
 
-
     //` For sign in and sign up
     const [isSignUp, setIsSignUp] = useState(false)
     //` For password show and hide
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+    const passwordsMatch = signUpData.password === signUpData.confirmPassword;
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-10">
@@ -152,6 +155,8 @@ function Signin() {
                                 name="confirmPassword"
                                 type={showConfirmPassword ? "text" : "password"}
                                 minLength={8}
+                                value={signUpData.confirmPassword}
+                                onChange={handleChange}
                                 required
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                             />
@@ -163,12 +168,14 @@ function Signin() {
                                 {showConfirmPassword ? "Hide" : "Show"}
                             </button>
                         </div>
+                        {!passwordsMatch && <p className="text-sm text-red-500">Incorrect password</p>}
                     </div>
                     <div>
                         <Button1
                             type={"submit"}
                             text={isSignUp ? 'Sign up' : 'Sign in'}
                             size={"full"}
+                            disabled={!passwordsMatch}
                         />
                     </div>
                 </form>
