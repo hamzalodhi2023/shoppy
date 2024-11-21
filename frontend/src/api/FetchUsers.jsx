@@ -33,6 +33,7 @@ export const useLoginUserMutation = () => {
             toast.success(data.message, {
                 theme: darkMode ? "dark" : "light",
             });
+            localStorage.setItem("token", data.token);
             navigate("/shop"); // Use navigate here
         },
         onError: (error) => {
