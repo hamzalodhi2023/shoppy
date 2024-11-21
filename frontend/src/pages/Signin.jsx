@@ -25,6 +25,7 @@ function Signin() {
             mobile: "",
             confirmPassword: "",
         });
+        setIsSignUp(false)
     };
     //` Sign Up Form Mutation
     const { mutate: createUser } = useCreateUserMutation(resetSignUpData);
@@ -36,7 +37,7 @@ function Signin() {
     };
 
     //` Handle Submit Function
-    const handleSubmit = (e) => {
+    const handleSubmitSignup = (e) => {
         e.preventDefault();
         if (passwordsMatch) {
             createUser(signUpData);
@@ -57,7 +58,7 @@ function Signin() {
                 <div>
                     {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                 </div>
-                <form autoComplete='off' onSubmit={handleSubmit} className="space-y-6 ">
+                <form autoComplete='off' onSubmit={!isSignUp ? handleSubmitSignup : handleSubmitSignin} className="space-y-6 ">
                     {isSignUp && (
                         <div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

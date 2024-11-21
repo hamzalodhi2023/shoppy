@@ -3,8 +3,7 @@ import { CreateUser } from "./UsersApi";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
+// ` Create User Mutation
 export const useCreateUserMutation = (onSuccessCallback) =>
     useMutation({
         mutationFn: (signUpData) => CreateUser(signUpData),
@@ -20,6 +19,7 @@ export const useCreateUserMutation = (onSuccessCallback) =>
 
             }
             onSuccessCallback();
+
         },
         onError: (error) => {
             if (localStorage.getItem("darkMode") === "true") {
@@ -35,6 +35,7 @@ export const useCreateUserMutation = (onSuccessCallback) =>
         },
     });
 
+// ` Login User Mutation
 export const useLoginUserMutation = (onSuccessCallback) =>
     useMutation({
         mutationFn: (signUpData) => CreateUser(signUpData),
