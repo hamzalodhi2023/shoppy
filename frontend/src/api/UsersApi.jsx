@@ -13,3 +13,11 @@ export const CreateUser = async (signUpData) => {
         throw error;
     }
 };
+export const Login = async (loginData) => {
+    try {
+        const res = await api.post("/login", loginData);
+        return res.data;
+    } catch (error) {
+        throw error;
+    }
+};

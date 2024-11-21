@@ -19,9 +19,36 @@ export const useCreateUserMutation = (onSuccessCallback) =>
                 });
 
             }
-            // toast.success(data.message, {
-            //     theme: "light",
-            // });
+            onSuccessCallback();
+        },
+        onError: (error) => {
+            if (localStorage.getItem("darkMode") === "true") {
+                toast.error(error.response.data.message, {
+                    theme: "dark",
+                });
+            } else {
+                toast.error(error.response.data.message, {
+                    theme: "light",
+                });
+
+            }
+        },
+    });
+
+export const useLoginUserMutation = (onSuccessCallback) =>
+    useMutation({
+        mutationFn: (signUpData) => CreateUser(signUpData),
+        onSuccess: (data) => {
+            if (localStorage.getItem("darkMode") === "true") {
+                toast.success(data.message, {
+                    theme: "dark",
+                });
+            } else {
+                toast.success(data.message, {
+                    theme: "light",
+                });
+
+            }
             onSuccessCallback();
         },
         onError: (error) => {
