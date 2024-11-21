@@ -14,6 +14,7 @@ const router = express.Router();
  * @const {Function} createUser - Controller function for user creation
  */
 const createUser = require("../controllers/users/create");
+const loginUser = require("../controllers/users/login");
 
 /**
  * Route to create a new user
@@ -26,6 +27,7 @@ const createUser = require("../controllers/users/create");
  * @returns {Promise<void>} - Resolves when user creation is complete
  */
 router.post("/create", createUser);
+router.post("/login", loginUser);
 
 /**
  * Export the router instance
