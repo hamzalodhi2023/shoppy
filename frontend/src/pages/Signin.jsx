@@ -38,7 +38,9 @@ function Signin() {
     //` Handle Submit Function
     const handleSubmit = (e) => {
         e.preventDefault();
-        createUser(signUpData);
+        if (passwordsMatch) {
+            createUser(signUpData);
+        }
     };
 
     //` For sign in and sign up
