@@ -38,6 +38,7 @@ function Navbar() {
           </span>
         </span>
         <div className="flex items-center gap-5 md:order-2">
+          {/* dark theme button */}
           <div className="flex items-center justify-center">
             <button
               onClick={() => {
@@ -55,6 +56,7 @@ function Navbar() {
               )}
             </button>
           </div>
+          {/* Avtor button */}
           <div className={` ${localStorage.getItem("token") ? "relative" : "hidden"} relative group`}>
             <div className="w-8 overflow-hidden rounded-full cursor-pointer ring-[#e97730] ring-offset-[#ffff] dark:ring-offset-[#383838] ring ring-offset-2">
               <img src="https://thispersondoesnotexist.com/" />
@@ -67,6 +69,7 @@ function Navbar() {
               </div>
             </div>
           </div>
+          {/* Cart button */}
           <div className="indicator">
             <span className="indicator-item bg-[#e97730] border-none text-white badge badge-sm">30</span>
             <NavLink to="/cart" className={({ isActive }) => `${isActive ? "text-[#e97730] dark:text-[#e97730]" : "dark:text-[#94969a]"} text-3xl text-[#383838]`}>
