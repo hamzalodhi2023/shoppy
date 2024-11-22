@@ -29,22 +29,37 @@ function Navbar() {
             SHOPPY
           </span>
         </span>
-        <div className="flex md:order-2">
-          <button
-            onClick={() => {
-              setIsDark(!isDark);
-              isDark
-                ? localStorage.setItem("darkMode", "true")
-                : localStorage.setItem("darkMode", "false");
-            }}
-            className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#d1d5db9a] backdrop-blur-lg"
-          >
-            {localStorage.getItem("darkMode") === "true" ? (
-              <MdLightMode className="text-[#383838]" size={24} />
-            ) : (
-              <MdDarkMode className="text-[#383838]" size={24} />
-            )}
-          </button>
+        <div className="flex items-center gap-5 md:order-2">
+          <div className="flex items-center justify-center">
+            <button
+              onClick={() => {
+                setIsDark(!isDark);
+                isDark
+                  ? localStorage.setItem("darkMode", "true")
+                  : localStorage.setItem("darkMode", "false");
+              }}
+              className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#d1d5db9a] backdrop-blur-lg"
+            >
+              {localStorage.getItem("darkMode") === "true" ? (
+                <MdLightMode className="text-[#383838]" size={24} />
+              ) : (
+                <MdDarkMode className="text-[#383838]" size={24} />
+              )}
+            </button>
+          </div>
+          <div className="relative group">
+            <div className="w-8 overflow-hidden rounded-full ring-primary ring-offset-base-100 ring ring-offset-2">
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            </div>
+            <div className="absolute right-0 z-40 hidden pt-0 group-hover:block dropdown-menu">
+              <div className="flex flex-col gap-2 px-5 py-3 text-gray-500 rounded w-36 bg-slate-100">
+                <p className="cursor-pointer hover:text-gray-700">My Profile</p>
+                <p className="cursor-pointer hover:text-gray-700">Orders</p>
+                <p className="cursor-pointer hover:text-gray-700">Logout</p>
+              </div>
+            </div>
+          </div>
+
           <Button1 className={`${localStorage.getItem("token") ? "hidden" : "block"}`} onclick={() => navigate("/signin")} text="Sign In" size={"fit"} >
 
           </Button1>
@@ -54,8 +69,7 @@ function Navbar() {
           >
             {isOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
           </button>
-        </div>
-        <div
+        </div>        <div
           className={`w-full items-center justify-between md:order-1 md:flex md:w-auto ${isOpen ? "" : "hidden"}`}
         >
           <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg md:mt-0 md:flex-row md:space-x-8">
