@@ -56,7 +56,7 @@ function Navbar() {
           </div>
           <div className={` ${localStorage.getItem("token") ? "relative" : "hidden"} relative group`}>
             <div className="w-8 overflow-hidden rounded-full cursor-pointer ring-[#e97730] ring-offset-[#ffff] dark:ring-offset-[#383838] ring ring-offset-2">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              <img src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png" />
             </div>
             <div className="absolute right-0 z-40 hidden pt-4 shadow-md group-hover:block dropdown-menu ">
               <div className="flex flex-col gap-2 px-5 py-3 font-medium rounded dark:bg-[#2a2a2a] dark:text-white text-[#383838] w-36 bg-slate-100">
