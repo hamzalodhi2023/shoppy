@@ -8,6 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { IoSettings } from "react-icons/io5";
 import { AiFillProduct } from "react-icons/ai";
 import { RiShutDownLine } from "react-icons/ri";
+import { FaBagShopping } from "react-icons/fa6";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ function Navbar() {
           </div>
           <div className={` ${localStorage.getItem("token") ? "relative" : "hidden"} relative group`}>
             <div className="w-8 overflow-hidden rounded-full cursor-pointer ring-[#e97730] ring-offset-[#ffff] dark:ring-offset-[#383838] ring ring-offset-2">
-              <img src="https://cdn-icons-png.flaticon.com/512/8792/8792047.png" />
+              <img src="https://thispersondoesnotexist.com/" />
             </div>
             <div className="absolute right-0 z-40 hidden pt-4 shadow-md group-hover:block dropdown-menu ">
               <div className="flex flex-col gap-2 px-5 py-3 font-medium rounded dark:bg-[#2a2a2a] dark:text-white text-[#383838] w-36 bg-slate-100">
@@ -66,7 +67,12 @@ function Navbar() {
               </div>
             </div>
           </div>
-
+          <div className="indicator">
+            <span className="indicator-item bg-[#e97730] border-none text-white badge badge-sm">30</span>
+            <NavLink to="/cart" className={({ isActive }) => `${isActive ? "text-[#e97730] dark:text-[#e97730]" : "dark:text-[#94969a]"} text-3xl text-[#383838]`}>
+              <FaBagShopping />
+            </NavLink>
+          </div>
           <Button1 className={`${localStorage.getItem("token") ? "hidden" : "block"}`} onclick={() => navigate("/signin")} text="Sign In" size={"fit"} >
 
           </Button1>
@@ -76,9 +82,8 @@ function Navbar() {
           >
             {isOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
           </button>
-        </div>        <div
-          className={`w-full items-center justify-between md:order-1 md:flex md:w-auto ${isOpen ? "" : "hidden"}`}
-        >
+        </div>
+        <div className={`w-full items-center justify-between md:order-1 md:flex md:w-auto ${isOpen ? "" : "hidden"}`}>
           <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg md:mt-0 md:flex-row md:space-x-8">
             <li>
               <NavLink
