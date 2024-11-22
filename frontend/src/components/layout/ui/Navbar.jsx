@@ -54,7 +54,7 @@ function Navbar() {
               )}
             </button>
           </div>
-          <div className="relative group">
+          <div className={` ${localStorage.getItem("token") ? "relative" : "hidden"} relative group`}>
             <div className="w-8 overflow-hidden rounded-full cursor-pointer ring-[#e97730] ring-offset-[#ffff] dark:ring-offset-[#383838] ring ring-offset-2">
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
