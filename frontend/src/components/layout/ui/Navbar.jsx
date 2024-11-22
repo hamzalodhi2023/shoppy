@@ -5,6 +5,9 @@ import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { Button1 } from "./Button";
 import { NavLink, useNavigate } from "react-router-dom";
+import { IoSettings } from "react-icons/io5";
+import { AiFillProduct } from "react-icons/ai";
+import { RiShutDownLine } from "react-icons/ri";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -17,6 +20,10 @@ function Navbar() {
       document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
+  const clearToken = () => {
+    localStorage.removeItem("token");
+    navigate("/signin");
+  };
 
   return (
     <nav className="w-full border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-[#383838]">
@@ -48,14 +55,14 @@ function Navbar() {
             </button>
           </div>
           <div className="relative group">
-            <div className="w-8 overflow-hidden rounded-full ring-primary ring-offset-base-100 ring ring-offset-2">
+            <div className="w-8 overflow-hidden rounded-full cursor-pointer ring-[#e97730] ring-offset-[#ffff] dark:ring-offset-[#383838] ring ring-offset-2">
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
-            <div className="absolute right-0 z-40 hidden pt-0 group-hover:block dropdown-menu">
-              <div className="flex flex-col gap-2 px-5 py-3 text-gray-500 rounded w-36 bg-slate-100">
-                <p className="cursor-pointer hover:text-gray-700">My Profile</p>
-                <p className="cursor-pointer hover:text-gray-700">Orders</p>
-                <p className="cursor-pointer hover:text-gray-700">Logout</p>
+            <div className="absolute right-0 z-40 hidden pt-4 shadow-md group-hover:block dropdown-menu ">
+              <div className="flex flex-col gap-2 px-5 py-3 font-medium rounded dark:bg-[#2a2a2a] dark:text-white text-[#383838] w-36 bg-slate-100">
+                <p className="cursor-pointer hover:text-[#e97730] flex items-center justify-start gap-3"><IoSettings /> Settings </p>
+                <p className="cursor-pointer hover:text-[#e97730] flex items-center justify-start gap-3"><AiFillProduct /> Orders</p>
+                <p className="flex items-center justify-start gap-3 text-red-500 cursor-pointer hover:text-red-400" onClick={clearToken}><RiShutDownLine /> Logout</p>
               </div>
             </div>
           </div>
