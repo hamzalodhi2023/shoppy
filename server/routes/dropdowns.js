@@ -10,6 +10,7 @@ const router = express.Router();
 // Controller imports for dropdown operations
 const createDropdown = require("../controllers/dropdowns/create");
 const deleteDropdown = require("../controllers/dropdowns/delete");
+const readDropdown = require("../controllers/dropdowns/read");
 
 /**
  * Routes configuration for dropdown management
@@ -31,6 +32,8 @@ router.post("/create/:id", createDropdown);
  * @access Public
  */
 router.delete("/delete/:id", deleteDropdown);
+
+router.get("/read", readDropdown);
 
 // Export the router instance
 module.exports = router;
