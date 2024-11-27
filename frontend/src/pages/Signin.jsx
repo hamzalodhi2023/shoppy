@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Title from '../components/layout/ui/Title'
-import { useCreateUserMutation } from "../api/FetchUsers";
+import { useCreateUserMutation, useLoginUserMutation } from "../api/FetchUsers";
 import { Button1 } from "../components/layout/ui/Button";
 
 
@@ -25,9 +25,13 @@ function Signin() {
             mobile: "",
             confirmPassword: "",
         });
+        setIsSignUp(false)
     };
     //` Sign Up Form Mutation
     const { mutate: createUser } = useCreateUserMutation(resetSignUpData);
+
+    // ` Sign In Form Mutation
+    const { mutate: signIn } = useLoginUserMutation();
 
     //` Handle Change Function
     const handleChange = (e) => {
@@ -35,12 +39,19 @@ function Signin() {
         setSignUpData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    //` Handle Submit Function
-    const handleSubmit = (e) => {
+    //` Handle Sign Up function
+    const handleSubmitSignup = (e) => {
         e.preventDefault();
-        if (passwordsMatch) {
-            createUser(signUpData);
-        }
+        createUser(signUpData);
+    };
+
+    //` Handle Sign In function
+    const handleSubmitSignin = (e) => {
+        e.preventDefault();
+        signIn({
+            email: signUpData.email,
+            password: signUpData.password,
+        });
     };
 
     //` For sign in and sign up
@@ -57,7 +68,7 @@ function Signin() {
                 <div>
                     {isSignUp ? <Title text1={"CREATE"} text2={"ACCOUNT"} /> : <Title text1={"SIGN IN"} text2={"TO YOUR ACCOUNT"} />}
                 </div>
-                <form autoComplete='off' onSubmit={handleSubmit} className="space-y-6 ">
+                <form autoComplete='off' onSubmit={isSignUp ? handleSubmitSignup : handleSubmitSignin} className="space-y-6 ">
                     {isSignUp && (
                         <div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -159,7 +170,7 @@ function Signin() {
                                 minLength={8}
                                 value={signUpData.confirmPassword}
                                 onChange={handleChange}
-                                required
+                                required={isSignUp}
                                 className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
                             />
                             <button
