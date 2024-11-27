@@ -15,6 +15,7 @@ require("./config/db")();
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const dropdownRouter = require("./routes/dropdowns");
+const productRouter = require("./routes/products");
 
 // Create Express application instance
 var app = express();
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files f
 app.use("/", indexRouter); // Mount index routes at root path
 app.use("/users", usersRouter); // Mount user routes at /users path
 app.use("/dropdowns", dropdownRouter); // Mount dropdown routes at /dropdowns path
+app.use("/products", productRouter); // Mount product routes at /products path
 
 // Export Express application for use in other modules
 module.exports = app;

@@ -33,6 +33,13 @@ router.post("/create/:id", createDropdown);
  */
 router.delete("/delete/:id", deleteDropdown);
 
+/**
+ * @route GET /read
+ * @description Retrieves all available dropdowns from the system
+ * @returns {Array} List of dropdown objects containing their configurations and data
+ * @access Public
+ * @throws {Error} If database connection fails or query execution encounters an error
+ */
 router.get("/read", readDropdown);
 
 // Export the router instance
