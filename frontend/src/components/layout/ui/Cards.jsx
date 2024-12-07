@@ -7,18 +7,18 @@ function Cards() {
         <img
           src="/images/8.webp"
           alt="Product"
-          className="absolute h-full w-full transform object-cover transition-transform duration-500 group-hover:scale-110"
+          className="absolute object-cover w-full h-full transition-transform duration-500 transform group-hover:scale-110"
         />
         <img
           src="/images/3.webp"
           alt="Product"
-          className="absolute h-full w-full object-cover transition-all duration-500 group-hover:opacity-0"
+          className="absolute object-cover w-full h-full transition-all duration-500 group-hover:opacity-0"
         />
         <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center gap-5 rounded-xl bg-[#38383885] opacity-0 transition-all duration-500 group-hover:z-10 group-hover:opacity-100">
           <button className="transform rounded-full bg-[#e97730] p-3 text-white transition-all duration-300 hover:rotate-6 hover:scale-110 hover:bg-opacity-80">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 sm:h-5 sm:w-5 md:h-6 md:w-6"
+              className="w-6 h-6 sm:h-5 sm:w-5 md:h-6 md:w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -34,7 +34,7 @@ function Cards() {
           <button className="transform rounded-full bg-[#e97730] p-3 text-white transition-all duration-300 hover:rotate-6 hover:scale-110 hover:bg-opacity-80">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 sm:h-5 sm:w-5 md:h-6 md:w-6"
+              className="w-6 h-6 sm:h-5 sm:w-5 md:h-6 md:w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -61,7 +61,7 @@ function Cards() {
       <p className="mb-2 text-sm text-gray-600 dark:text-gray-300 sm:text-base">
         Description of the product
       </p>
-      <div className="mt-auto flex items-center justify-between">
+      <div className="flex items-center justify-between mt-auto">
         <span className="animate-pulse text-lg font-bold text-[#e97730] sm:text-xl">
           PKR 99.99
         </span>
