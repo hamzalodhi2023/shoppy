@@ -63,7 +63,7 @@ function Navbar() {
             </div>
             <div className="absolute right-0 z-40 hidden pt-4 shadow-md group-hover:block dropdown-menu ">
               <div className="flex flex-col gap-2 px-5 py-3 font-medium rounded dark:bg-[#2a2a2a] dark:text-white text-[#383838] w-36 bg-slate-100">
-                <p className="cursor-pointer hover:text-[#e97730] flex items-center justify-start gap-3"><IoSettings /> Settings </p>
+                <p className="cursor-pointer hover:text-[#e97730] flex items-center justify-start gap-3" onClick={() => navigate("/user-settings")}><IoSettings /> Settings </p>
                 <p className="cursor-pointer hover:text-[#e97730] flex items-center justify-start gap-3"><AiFillProduct /> Orders</p>
                 <p className="flex items-center justify-start gap-3 text-red-500 cursor-pointer hover:text-red-400" onClick={clearToken}><RiShutDownLine /> Sign Out</p>
               </div>
