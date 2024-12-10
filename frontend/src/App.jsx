@@ -11,6 +11,7 @@ import Shop from "./pages/Shop";
 import Signin from "./pages/Signin";
 import { ToastContainer } from 'react-toastify';
 import Cart from "./pages/Cart";
+import UserSettings from "./pages/UserSettings";
 const queryClient = new QueryClient();
 function App() {
   let routes = createBrowserRouter([
@@ -46,6 +47,10 @@ function App() {
         {
           path: "/cart",
           element: <Cart />
+        },
+        {
+          path: "/user-settings",
+          element: <UserSettings />
         }
       ]
     }
