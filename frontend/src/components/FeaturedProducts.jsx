@@ -8,10 +8,7 @@ function FeaturedProducts() {
                 <Title text1={"FEATURED"} text2={"PRODUCTS"} />
                 <div className="flex flex-wrap gap-6 justify-evenly">
                     {/* cards Start */}
-                    <Cards />
-                    <Cards />
-                    <Cards />
-                    <Cards />
+
                     {/* cards End */}
                 </div>
             </div>

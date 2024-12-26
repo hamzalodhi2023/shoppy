@@ -14,7 +14,6 @@ function Shop() {
     }, [data, dispatch]);
 
     const products = useSelector((state) => state.products);
-    // console.log(products)
     //` Is Loading 
     if (isLoading) {
         return (
@@ -110,7 +109,9 @@ function Shop() {
                     <div className="lg:w-3/4">
                         <div className="flex flex-wrap gap-6">
                             {/* Product Card */}
-                            <Cards products={products} />
+                            {products.map(({ _id, name, price, description, photos }) => {
+                                return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} />
+                            })}
                         </div>
                     </div>
                 </div>
