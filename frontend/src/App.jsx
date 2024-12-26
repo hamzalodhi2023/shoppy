@@ -17,7 +17,7 @@ import AppDataLoader from "./AppDataLoader";
 // Create the Query Client instance
 const queryClient = new QueryClient();
 
-function AppRoutes() {
+function App() {
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -35,15 +35,10 @@ function AppRoutes() {
       ],
     },
   ]);
-
-  return <RouterProvider router={routes} />;
-}
-
-function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AppDataLoader /> {/* Centralized data fetching */}
-      <AppRoutes />
+      <RouterProvider router={routes} />
       <ToastContainer />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
