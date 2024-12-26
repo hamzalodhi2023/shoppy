@@ -4,7 +4,7 @@ import Title from "./layout/ui/Title"
 
 function FeaturedProducts() {
     const data = useSelector((state) => state.products);
-    const products = data.slice(0, 3);
+    const products = data.slice(5, 8);
     return (
         <div className="w-full py-16 px-4 dark:bg-[#383838]">
             <div className="max-w-[1240px] mx-auto">
