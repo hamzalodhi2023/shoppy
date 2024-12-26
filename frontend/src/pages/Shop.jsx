@@ -46,7 +46,7 @@ function Shop() {
                         Oops! Something went wrong
                     </h2>
                     <p className="mb-6 text-gray-600 dark:text-gray-300">
-                        {error.message || "We encountered an error while fetching the products. Please try again later."}
+                        {isError.message || "We encountered an error while fetching the products. Please try again later."}
                     </p>
                     <button
                         onClick={() => window.location.reload()}

@@ -3,6 +3,7 @@ import Title from "./layout/ui/Title"
 
 function NewArrivals() {
     const products = useSelector((state) => state.products);
+    console.log(products)
     return (
         <div className="w-full py-16 px-4 dark:bg-[#383838]">
             <div className="max-w-[1240px] mx-auto">

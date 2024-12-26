@@ -9,61 +9,46 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 import Signin from "./pages/Signin";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import Cart from "./pages/Cart";
 import UserSettings from "./pages/UserSettings";
+import AppDataLoader from "./AppDataLoader";
+
+// Create the Query Client instance
 const queryClient = new QueryClient();
-function App() {
-  let routes = createBrowserRouter([
+
+function AppRoutes() {
+  const routes = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
       errorElement: <Error />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/about",
-          element: <About />
-        },
-        {
-          path: "/blog",
-          element: <Blog />
-        },
-        {
-          path: "/contact",
-          element: <Contact />
-        },
-        {
-          path: "/shop",
-          element: <Shop />
-        },
-        {
-          path: "/signin",
-          element: <Signin />
-        },
-        {
-          path: "/cart",
-          element: <Cart />
-        },
-        {
-          path: "/user-settings",
-          element: <UserSettings />
-        }
-      ]
-    }
-  ])
-  return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={routes} />
-        < ToastContainer />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </>
-  )
+        { path: "/", element: <Home /> },
+        { path: "/about", element: <About /> },
+        { path: "/blog", element: <Blog /> },
+        { path: "/contact", element: <Contact /> },
+        { path: "/shop", element: <Shop /> },
+        { path: "/signin", element: <Signin /> },
+        { path: "/cart", element: <Cart /> },
+        { path: "/user-settings", element: <UserSettings /> },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={routes} />;
 }
 
-export default App
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppDataLoader /> {/* Centralized data fetching */}
+      <AppRoutes />
+      <ToastContainer />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
+}
+
+
+export default App;
