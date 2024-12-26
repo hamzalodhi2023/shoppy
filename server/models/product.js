@@ -117,7 +117,7 @@ const productSchema = new Schema(
     // Product images (3-5 required)
     photos: [
       {
-        type: Buffer,
+        type: String,
         required: true,
         min: 3,
         max: 5,

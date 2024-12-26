@@ -9,7 +9,7 @@ function Cards({ products }) {
       return (
         <div key={_id} className="flex flex-wrap justify-center gap-4 p-4">
           <div className="max-w-sm bg-white dark:bg-[#383838] rounded-lg shadow-md overflow-hidden transition-colors duration-200 hover:shadow-xl">
-            <img className="object-cover w-full h-48" src="https://static-01.daraz.pk/p/4593f59ebd0e94161c5871e69a4d43d5.jpg" alt="Product" />
+            <img className="object-cover w-full h-48" src={photos[0]} alt="Product" />
             <div className="p-4">
               <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{name}</h2>
               <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{description}</p>
