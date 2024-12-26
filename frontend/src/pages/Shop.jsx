@@ -1,9 +1,19 @@
+import { useEffect } from "react";
 import { useProducts } from "../api/ProductMutations"
 import Cards from "../components/layout/ui/Cards"
+import { useDispatch, useSelector } from "react-redux";
 
 function Shop() {
-    // const { data } = useProducts()
-    // console.log(data)
+    const dispatch = useDispatch();
+    const { data, isLoading, error } = useProducts();
+    useEffect(() => {
+        if (data) {
+            dispatch({ type: "SET_PRODUCTS", payload: data });
+        }
+    }, [data, dispatch]);
+
+    const products = useSelector((state) => state.products);
+    console.log(products)
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838]">
             <div className="container px-4 py-8 mx-auto">
