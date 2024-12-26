@@ -11,16 +11,14 @@ import { useEffect } from "react"
 
 
 function Home() {
-    const dispatch = useDispatch();
-    const { data, isLoading, error } = useProducts();
+    // const dispatch = useDispatch();
+    // const { data, isLoading, error } = useProducts();
 
-    useEffect(() => {
-        if (data) {
-            dispatch({ type: "SET_PRODUCTS", payload: data });
-            dispatch({ type: "SET_LOADING", payload: isLoading });
-            dispatch({ type: "SET_ERROR", payload: error });
-        }
-    }, [data, dispatch]);
+    // useEffect(() => {
+    //     if (data) {
+    //         dispatch({ type: "SET_PRODUCTS", payload: data });
+    //     }
+    // }, [data, dispatch]);
 
     return (
         <>
