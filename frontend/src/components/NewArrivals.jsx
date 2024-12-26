@@ -1,15 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import Cards from "./layout/ui/Cards"
+import { useSelector } from "react-redux";
 import Title from "./layout/ui/Title"
-import { useEffect } from "react";
 
 function NewArrivals() {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch({ type: "NEW_ARRIVALS" });
-    }, [dispatch]);
-    const newArrivals = useSelector((state) => state.newArrivals);
-    console.log(newArrivals)
+    const products = useSelector((state) => state.products);
     return (
         <div className="w-full py-16 px-4 dark:bg-[#383838]">
             <div className="max-w-[1240px] mx-auto">

@@ -5,15 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
 function Shop() {
-    const dispatch = useDispatch();
-    const { data, isLoading, error } = useProducts();
-    useEffect(() => {
-        if (data) {
-            dispatch({ type: "SET_PRODUCTS", payload: data });
-        }
-    }, [data, dispatch]);
-
     const products = useSelector((state) => state.products);
+    const isLoading = useSelector((state) => state.isLoading);
+    const isError = useSelector((state) => state.isError);
     //` Is Loading 
     if (isLoading) {
         return (
@@ -39,7 +33,7 @@ function Shop() {
         );
     }
     //` Is Error
-    if (error) {
+    if (isError) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-[#383838] px-4">
                 <div className="text-center max-w-lg w-full bg-white dark:bg-[#2d2d2d] p-8 rounded-lg shadow-lg">
