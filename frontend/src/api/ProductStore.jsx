@@ -1,11 +1,6 @@
-import { useQuery } from "@tanstack/react-query"
-import { GetAllProducts } from "../api/ProductApi"
 import { createStore } from 'redux'
-import { useProducts } from "./ProductMutations"
 
-const { data } = useProducts()
-console.log(data)
-const initialState = { products: data }
+const initialState = { products: [] }
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,4 +14,5 @@ const productReducer = (state = initialState, action) => {
 // Store
 
 const store = createStore(productReducer)
-console.log(store)
+
+export default store

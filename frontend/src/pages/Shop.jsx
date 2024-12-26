@@ -1,6 +1,9 @@
+import { useProducts } from "../api/ProductMutations"
 import Cards from "../components/layout/ui/Cards"
 
 function Shop() {
+    // const { data } = useProducts()
+    // console.log(data)
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838]">
             <div className="container px-4 py-8 mx-auto">
