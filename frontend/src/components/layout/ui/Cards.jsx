@@ -1,21 +1,27 @@
 import React from 'react'
 import { Button1 } from './Button'
 
-function Cards() {
+function Cards({ products }) {
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
-      <div className="max-w-sm bg-white dark:bg-[#383838] rounded-lg shadow-md overflow-hidden transition-colors duration-200 hover:shadow-xl">
-        <img className="object-cover w-full h-48" src="https://via.placeholder.com/400" alt="Product" />
-        <div className="p-4">
-          <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">Product Name</h2>
-          <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">Product description goes here. This is a sample text to demonstrate the card layout.</p>
-          <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-[#e97730] dark:text-[#e97730]">$99.99</span>
-            <Button1 text={"view more"} size={"fit"} />
+    products?.map((item) => {
+      const { _id, name, price, description, photos } = item
+
+      return (
+        <div key={_id} className="flex flex-wrap justify-center gap-4 p-4">
+          <div className="max-w-sm bg-white dark:bg-[#383838] rounded-lg shadow-md overflow-hidden transition-colors duration-200 hover:shadow-xl">
+            <img className="object-cover w-full h-48" src="https://static-01.daraz.pk/p/4593f59ebd0e94161c5871e69a4d43d5.jpg" alt="Product" />
+            <div className="p-4">
+              <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{name}</h2>
+              <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-lg font-bold text-[#e97730] dark:text-[#e97730]">PKR. {price}</span>
+                <Button1 text={"View More"} size={"fit"} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )
+    })
   )
 }
 

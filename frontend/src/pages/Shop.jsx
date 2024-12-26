@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useProducts } from "../api/ProductMutations"
 import Cards from "../components/layout/ui/Cards"
 import { useDispatch, useSelector } from "react-redux";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 function Shop() {
     const dispatch = useDispatch();
@@ -13,7 +14,58 @@ function Shop() {
     }, [data, dispatch]);
 
     const products = useSelector((state) => state.products);
-    console.log(products)
+    // console.log(products)
+    //` Is Loading 
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-[#383838]">
+                <div className="text-center">
+                    <ScaleLoader
+                        color="#e97730"
+                        loading={isLoading}
+                        // cssOverride={override}
+                        width={10}
+                        height={100}
+
+                    />
+                    {/* <div className="mb-4">
+                        <div className="w-16 h-16 mx-auto">
+                            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#e97730]"></div>
+                        </div>
+                    </div> */}
+                    <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">Loading...</h2>
+                    <p className="mt-2 text-gray-600 dark:text-gray-300">Please wait while we fetch the products</p>
+                </div>
+            </div>
+        );
+    }
+    //` Is Error
+    if (error) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-[#383838] px-4">
+                <div className="text-center max-w-lg w-full bg-white dark:bg-[#2d2d2d] p-8 rounded-lg shadow-lg">
+                    <div className="mb-6">
+                        <svg className="mx-auto h-16 w-16 text-[#e97730]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-[#e97730] mb-4">
+                        Oops! Something went wrong
+                    </h2>
+                    <p className="mb-6 text-gray-600 dark:text-gray-300">
+                        {error.message || "We encountered an error while fetching the products. Please try again later."}
+                    </p>
+                    <button
+                        onClick={() => window.location.reload()}
+                        className="bg-[#e97730] hover:bg-[#d16628] text-white font-semibold py-2 px-6 rounded-lg transition duration-300"
+                    >
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        );
+
+    }
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-[#383838]">
             <div className="container px-4 py-8 mx-auto">
@@ -58,36 +110,7 @@ function Shop() {
                     <div className="lg:w-3/4">
                         <div className="flex flex-wrap gap-6">
                             {/* Product Card */}
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            {/* {[1, 2, 3, 4, 5, 6].map((item) => (
-                                <div key={item} className="bg-white dark:bg-[#383838] rounded-lg shadow-md overflow-hidden">
-                                    <div className="aspect-w-1 aspect-h-1">
-                                        <img
-                                            src={`https://via.placeholder.com/300`}
-                                            alt="Product"
-                                            className="object-cover w-full h-48"
-                                        />
-                                    </div>
-                                    <div className="p-4">
-                                        <h3 className="text-lg font-semibold text-gray-800 dark:text-[#e97730]">Product Name</h3>
-                                        <p className="mt-1 text-gray-600 dark:text-gray-300">$99.99</p>
-                                        <button className="mt-4 w-full bg-[#e97730] text-white py-2 px-4 rounded hover:bg-[#d16628] transition-colors">
-                                            Add to Cart
-                                        </button>
-                                    </div>
-                                </div>
-                            ))} */}
+                            <Cards products={products} />
                         </div>
                     </div>
                 </div>
