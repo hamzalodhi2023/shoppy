@@ -12,26 +12,8 @@ import Signin from "./pages/Signin";
 import { ToastContainer } from 'react-toastify';
 import Cart from "./pages/Cart";
 import UserSettings from "./pages/UserSettings";
-import { useDispatch } from "react-redux";
-import { useProducts } from "./api/ProductMutations";
-import { useEffect } from "react";
-
 const queryClient = new QueryClient();
-
 function App() {
-
-  const dispatch = useDispatch();
-  const { data, isLoading, error } = useProducts();
-
-  // Centralized fetching of product data
-  useEffect(() => {
-    if (data) {
-      dispatch({ type: "SET_PRODUCTS", payload: data });
-      dispatch({ type: "SET_LOADING", payload: isLoading });
-      dispatch({ type: "SET_ERROR", payload: error });
-    }
-  }, [data, isLoading, error, dispatch]);
-
   let routes = createBrowserRouter([
     {
       path: "/",
