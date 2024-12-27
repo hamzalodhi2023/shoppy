@@ -5,8 +5,6 @@ import Services from "../components/Services"
 import Slider from "../components/Slider"
 import Slogan from "../components/Slogan"
 import Subscribe from "../components/Subscribe"
-import { useEffect } from "react"
-
 
 function Home() {
     return (

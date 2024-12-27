@@ -37,7 +37,7 @@ function App() {
   ]);
   return (
     <QueryClientProvider client={queryClient}>
-      <AppDataLoader /> {/* Centralized data fetching */}
+      <AppDataLoader />
       <RouterProvider router={routes} />
       <ToastContainer />
       <ReactQueryDevtools initialIsOpen={false} />
