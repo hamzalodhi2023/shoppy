@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux"
-import { useProducts } from "../api/ProductMutations"
 import FeaturedProducts from "../components/FeaturedProducts"
 import LatestBlog from "../components/LatestBlog"
 import NewArrivals from "../components/NewArrivals"
@@ -11,15 +9,6 @@ import { useEffect } from "react"
 
 
 function Home() {
-    // const dispatch = useDispatch();
-    // const { data, isLoading, error } = useProducts();
-
-    // useEffect(() => {
-    //     if (data) {
-    //         dispatch({ type: "SET_PRODUCTS", payload: data });
-    //     }
-    // }, [data, dispatch]);
-
     return (
         <>
             <Slider />
