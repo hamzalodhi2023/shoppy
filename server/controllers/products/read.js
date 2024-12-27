@@ -3,6 +3,7 @@
  * @module controllers/products/read
  */
 const productModel = require("../../models/product");
+const debug = require("debug")("development:controllers:products:read.js");
 
 /**
  * Handles product retrieval requests
