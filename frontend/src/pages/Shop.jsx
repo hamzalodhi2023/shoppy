@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
 function Shop() {
-    const products = useSelector((state) => state.products);
+    const products = useSelector((state) => state.filterProducts);
     const isLoading = useSelector((state) => state.isLoading);
     const isError = useSelector((state) => state.isError);
     //` Is Loading 
