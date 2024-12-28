@@ -73,7 +73,9 @@ function Shop() {
                                     <h3 className="mb-2 font-medium text-gray-700 dark:text-gray-200">Category</h3>
                                     <div className="space-y-2">
                                         <label className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                                            <input type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
+                                            <input onChange={(e) => {
+                                                console.log(e.target.value)
+                                            }} type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
                                             <span>Electronics</span>
                                         </label>
                                         <label className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
@@ -101,7 +103,7 @@ function Shop() {
 
                     {/* Products Grid */}
                     <div className="lg:w-3/4">
-                        <div className="flex flex-wrap gap-6">
+                        <div className="flex flex-wrap items-center gap-6 justify-evenly">
                             {/* Product Card */}
                             {products.map(({ _id, name, price, description, photos }) => {
                                 return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} />
