@@ -22,11 +22,6 @@ function Shop() {
                         height={100}
 
                     />
-                    {/* <div className="mb-4">
-                        <div className="w-16 h-16 mx-auto">
-                            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#e97730]"></div>
-                        </div>
-                    </div> */}
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">Loading...</h2>
                     <p className="mt-2 text-gray-600 dark:text-gray-300">Please wait while we fetch the products</p>
                 </div>
