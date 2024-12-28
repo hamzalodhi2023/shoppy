@@ -3,6 +3,7 @@ import { useProducts } from "../api/ProductMutations"
 import Cards from "../components/layout/ui/Cards"
 import { useDispatch, useSelector } from "react-redux";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { Button1 } from "../components/layout/ui/Button";
 
 function Shop() {
     const dispatch = useDispatch();
@@ -62,7 +63,10 @@ function Shop() {
                     {/* Filter Sidebar */}
                     <div className="lg:w-1/4">
                         <div className="bg-white dark:bg-[#383838] p-4 rounded-lg shadow-md">
-                            <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-[#e97730]">Filters</h2>
+                            <div className="flex items-center justify-between mb-4">
+                                <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">Filters</h2>
+                                <Button1 text={"Clear Filters"} size={"fit"} />
+                            </div>
                             <div className="space-y-4">
                                 {/* Search Bar */}
                                 <div>
