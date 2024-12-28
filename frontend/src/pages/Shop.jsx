@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
 function Shop() {
+    const dispatch = useDispatch();
     const products = useSelector((state) => state.filterProducts);
     const isLoading = useSelector((state) => state.isLoading);
     const isError = useSelector((state) => state.isError);
@@ -68,6 +69,18 @@ function Shop() {
                         <div className="bg-white dark:bg-[#383838] p-4 rounded-lg shadow-md">
                             <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-[#e97730]">Filters</h2>
                             <div className="space-y-4">
+                                {/* Search Bar */}
+                                <div>
+                                    <h3 className="mb-2 font-medium text-gray-700 dark:text-gray-200">Search Products</h3>
+                                    <input
+                                        type="text"
+                                        placeholder="Search..."
+                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-[#e97730] dark:bg-[#2d2d2d] dark:text-gray-200"
+                                        onChange={(e) => {
+                                            dispatch({ type: "SEARCH", payload: e.target.value });
+                                        }}
+                                    />
+                                </div>
                                 {/* Category Filter */}
                                 <div>
                                     <h3 className="mb-2 font-medium text-gray-700 dark:text-gray-200">Category</h3>

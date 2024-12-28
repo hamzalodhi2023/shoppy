@@ -10,6 +10,7 @@ const initialState = {
 const SET_PRODUCTS = "SET_PRODUCTS";
 const SET_LOADING = "SET_LOADING";
 const SET_ERROR = "SET_ERROR";
+const SEARCH = "SEARCH";
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -19,6 +20,12 @@ const productReducer = (state = initialState, action) => {
             return { ...state, isLoading: action.payload };
         case SET_ERROR:
             return { ...state, isError: action.payload };
+        case SEARCH:
+            const searchTerm = action.payload.toLowerCase();
+            const filterProducts = state.products.filter(product =>
+                product.name.toLowerCase().includes(searchTerm) // Adjust based on the structure of your product objects
+            );
+            return { ...state, filterProducts };
         default:
             return state;
     }
