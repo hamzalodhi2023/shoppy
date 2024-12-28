@@ -70,7 +70,7 @@ function Shop() {
                                     <input
                                         type="text"
                                         placeholder="Search..."
-                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-[#e97730] dark:bg-[#2d2d2d] dark:text-gray-200"
+                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-[#e97730] bg-transparent dark:focus:border-[#e97730]"
                                         onChange={(e) => {
                                             dispatch({ type: "SEARCH", payload: e.target.value });
                                         }}
@@ -111,10 +111,15 @@ function Shop() {
 
                     {/* Products Grid */}
                     <div className="lg:w-3/4">
+                        <div className="mb-4">
+                            <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">
+                                Total Products: {products.length}
+                            </h2>
+                        </div>
                         <div className="flex flex-wrap items-center gap-6 justify-evenly">
                             {/* Product Card */}
-                            {products.map(({ _id, name, price, description, photos }) => {
-                                return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} />
+                            {products.map(({ _id, name, price, description, photos, category }) => {
+                                return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} category={category} />
                             })}
                         </div>
                     </div>

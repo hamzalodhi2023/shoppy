@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button1 } from './Button'
 
-function Cards({ _id, name, price, description, photos }) {
+function Cards({ _id, name, price, description, photos, category }) {
 
   return (
     <div className="flex justify-center gap-4 p-4 flex-wrap w-[410px]">
@@ -9,6 +9,7 @@ function Cards({ _id, name, price, description, photos }) {
         <img className="object-cover w-full h-48" src={photos[0]} alt="Product" />
         <div className="flex flex-col flex-grow p-4">
           <h2 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">{name}</h2>
+          <p className="px-5 py-1 mb-2 text-xs text-gray-500 bg-gray-100 rounded-full w-fit dark:bg-gray-700 dark:text-gray-400">{category}</p>
           <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">{description}</p>
           <div className="flex items-center justify-between mt-auto">
             <span className="text-lg font-bold text-[#e97730] dark:text-[#e97730]">PKR. {price}</span>
