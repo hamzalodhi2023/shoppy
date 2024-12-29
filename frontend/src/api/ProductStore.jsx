@@ -33,7 +33,6 @@ const productReducer = (state = initialState, action) => {
             return { ...state, filterProducts };
         case CATEGORY_FILTER:
             const selectedCategory = action.payload.toLowerCase();
-            console.log(selectedCategory)
             const CategoryFilterProducts = state.products.filter(product => product.category.toLowerCase().includes(selectedCategory))
             return { ...state, filterProducts: CategoryFilterProducts };
         default:
