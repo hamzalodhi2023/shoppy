@@ -86,7 +86,9 @@ function Shop() {
                                         {categories.map((item, index) => {
                                             return (
                                                 <label key={index} className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                                                    <input type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
+                                                    <input onChange={(e) => {
+                                                        dispatch({ type: "CATEGORY_FILTER", payload: e.target.value });
+                                                    }} value={item} type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
                                                     <span>{item}</span>
                                                 </label>)
                                         })}

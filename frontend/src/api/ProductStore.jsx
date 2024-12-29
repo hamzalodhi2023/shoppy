@@ -13,6 +13,7 @@ const SET_LOADING = "SET_LOADING";
 const SET_ERROR = "SET_ERROR";
 const SEARCH = "SEARCH";
 const SET_CATEGORIES = "SET_CATEGORIES";
+const CATEGORY_FILTER = "CATEGORY_FILTER";
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -30,6 +31,11 @@ const productReducer = (state = initialState, action) => {
                 product.name.toLowerCase().includes(searchTerm) // Adjust based on the structure of your product objects
             );
             return { ...state, filterProducts };
+        case CATEGORY_FILTER:
+            const selectedCategory = action.payload.toLowerCase();
+            console.log(selectedCategory)
+            const CategoryFilterProducts = state.products.filter(product => product.category.toLowerCase().includes(selectedCategory))
+            return { ...state, filterProducts: CategoryFilterProducts };
         default:
             return state;
     }
