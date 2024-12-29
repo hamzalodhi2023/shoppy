@@ -8,6 +8,7 @@ import { Button1 } from "../components/layout/ui/Button";
 function Shop() {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.filterProducts);
+    const categories = useSelector((state) => state.categories)
     const isLoading = useSelector((state) => state.isLoading);
     const isError = useSelector((state) => state.isError);
     //` Is Loading 
@@ -18,10 +19,8 @@ function Shop() {
                     <ScaleLoader
                         color="#e97730"
                         loading={isLoading}
-                        // cssOverride={override}
                         width={10}
                         height={100}
-
                     />
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">Loading...</h2>
                     <p className="mt-2 text-gray-600 dark:text-gray-300">Please wait while we fetch the products</p>
@@ -84,20 +83,13 @@ function Shop() {
                                 <div>
                                     <h3 className="mb-2 font-medium text-gray-700 dark:text-gray-200">Category</h3>
                                     <div className="space-y-2">
-                                        <label className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                                            <input onChange={(e) => {
-                                                console.log(e.target.value)
-                                            }} type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
-                                            <span>Electronics</span>
-                                        </label>
-                                        <label className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                                            <input type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
-                                            <span>Clothing</span>
-                                        </label>
-                                        <label className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
-                                            <input type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
-                                            <span>Accessories</span>
-                                        </label>
+                                        {categories.map((item, index) => {
+                                            return (
+                                                <label key={index} className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                                                    <input type="checkbox" className="checkbox border-orange-400 [--chkbg:#e97730] [--chkfg:white] checked:border[#e97730]" />
+                                                    <span>{item}</span>
+                                                </label>)
+                                        })}
                                     </div>
                                 </div>
                                 {/* Price Range Filter */}

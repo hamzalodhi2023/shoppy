@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
     debug("Dropdowns found");
     return res.status(200).json({
       success: true,
-      dropdowns: dropdown.values,
+      data: dropdown.values,
     });
   } catch (error) {
     // Handle any unexpected errors
