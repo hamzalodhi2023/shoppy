@@ -94,15 +94,6 @@ function Shop() {
                                         })}
                                     </div>
                                 </div>
-                                {/* Price Range Filter */}
-                                <div>
-                                    <h3 className="mb-2 font-medium text-gray-700 dark:text-gray-200">Price Range</h3>
-                                    <input type="range" className="w-full accent-[#e97730]" min="0" max="1000" />
-                                    <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-                                        <span>$0</span>
-                                        <span>$1000</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
