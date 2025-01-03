@@ -64,7 +64,7 @@ function Shop() {
                         <div className="bg-white dark:bg-[#383838] p-4 rounded-lg shadow-md">
                             <div className="flex items-center justify-between mb-4">
                                 <h2 className="text-xl font-semibold text-gray-800 dark:text-[#e97730]">Filters</h2>
-                                <Button1 text={"Clear Filters"} size={"fit"} />
+                                <Button1 onclick={() => { dispatch({ type: "CLEAR_FILTER" }) }} text={"Clear Filters"} size={"fit"} />
                             </div>
                             <div className="space-y-4">
                                 {/* Search Bar */}
