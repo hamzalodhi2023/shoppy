@@ -4,13 +4,11 @@ const { Schema, model } = require("mongoose");
 // Define rating schema for product reviews
 const ratingSchema = new Schema(
   {
-    // Reference to the user who provided the rating
     user: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
     },
-    // Rating value between 1 and 5
     rating: {
       type: Number,
       required: true,
@@ -21,7 +19,6 @@ const ratingSchema = new Schema(
       type: String,
       required: true,
     },
-    // User's review comment
     comment: {
       type: String,
       required: true,
@@ -70,12 +67,10 @@ const productSchema = new Schema(
       type: Number,
       required: true,
     },
-    // Array of available product colors
     colors: {
       type: Array,
       default: null,
     },
-    // Product categorization
     category: {
       type: String,
       required: true,
@@ -84,7 +79,6 @@ const productSchema = new Schema(
       type: String,
       required: true,
     },
-    // Product measurement details
     unitOfMeasurement: {
       type: String,
       required: true,
@@ -97,7 +91,6 @@ const productSchema = new Schema(
       type: String,
       default: null,
     },
-    // Product specifications
     material: {
       type: String,
       default: null,
@@ -110,12 +103,10 @@ const productSchema = new Schema(
       type: String,
       default: null,
     },
-    // Clothing specific attribute
     madeType: {
       type: String,
       default: "null",
     },
-    // Inventory management
     stock: {
       type: Number,
       required: true,
@@ -128,7 +119,6 @@ const productSchema = new Schema(
     orderStatus: {
       type: orderStatusSchema,
     },
-    // Pricing and promotion
     discount: {
       type: Number,
       default: 0,
@@ -137,14 +127,11 @@ const productSchema = new Schema(
       type: Boolean,
       default: false,
     },
-    // Product ratings and reviews
     rating: [
       {
         type: ratingSchema,
       },
     ],
-    // Product images (3-5 required)
-    // product image name -> asdf26as2f-scarf.jpg
     photos: [
       {
         type: String,
@@ -153,6 +140,7 @@ const productSchema = new Schema(
         max: 5,
       },
     ],
+    // Additional suggested fields
     seoTitle: {
       type: String,
       default: null,
@@ -165,13 +153,46 @@ const productSchema = new Schema(
       type: [String],
       default: null,
     },
+    weight: {
+      type: Number, // Weight in kilograms or grams
+      required: true,
+    },
+    dimensions: {
+      length: { type: Number, default: null }, // Length in cm
+      width: { type: Number, default: null }, // Width in cm
+      height: { type: Number, default: null }, // Height in cm
+    },
+    variants: [
+      {
+        size: { type: String, required: true },
+        color: { type: String, required: true },
+        stock: { type: Number, required: true },
+        price: { type: Number, required: true },
+      },
+    ],
     taxPercentage: {
       type: Number,
       default: 0,
     },
+    tags: {
+      type: [String],
+      default: [],
+    },
+    labels: {
+      type: [String],
+      default: [],
+    },
     supplier: {
       name: { type: String, default: null },
       contact: { type: String, default: null },
+    },
+    isFeatured: {
+      type: Boolean,
+      default: false,
+    },
+    returnPolicy: {
+      type: String,
+      default: null,
     },
     warranty: {
       type: String,
@@ -181,12 +202,21 @@ const productSchema = new Schema(
       type: String,
       default: null, // Video URL
     },
+    favoritesCount: {
+      type: Number,
+      default: 0,
+    },
     faqs: [
       {
         question: { type: String, required: true },
         answer: { type: String, required: true },
       },
     ],
+    availability: {
+      type: String,
+      enum: ["Online", "In-Store", "Both"],
+      default: "Online",
+    },
   },
   { timestamps: true }
 );
