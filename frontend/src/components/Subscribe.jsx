@@ -16,7 +16,7 @@ function Subscribe() {
                         <input
                             type="email"
                             placeholder="Enter Email"
-                            className="w-full bg-white px-4 py-2 rounded-lg border dark:border-gray-600 focus:outline-none focus:border-[#e97730] dark:focus:border-[#e97730] dark:bg-[#383838] dark:text-gray-200"
+                            className="w-full bg-white px-4 py-2 rounded-lg border dark:border-gray-600 focus:outline-none focus:border-[#e97730] dark:focus:border-[#e97730] dark:bg-[#383838] text-[#383838] dark:text-gray-300"
                         />
                         <Button1 text={'Notify Me'} size={"fit"} />
                     </div>

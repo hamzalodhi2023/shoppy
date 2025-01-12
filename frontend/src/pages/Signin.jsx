@@ -83,7 +83,7 @@ function Signin() {
                                         value={signUpData.firstName}
                                         onChange={handleChange}
                                         required
-                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                                     />
                                 </div>
                                 <div>
@@ -97,7 +97,7 @@ function Signin() {
                                         value={signUpData.lastName}
                                         onChange={handleChange}
                                         required
-                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                        className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                                     />
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ function Signin() {
                                     value={signUpData.mobile}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                    className="mt-1 block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                                 />
                             </div>
                         </div>
@@ -131,7 +131,7 @@ function Signin() {
                             value={signUpData.email}
                             onChange={handleChange}
                             required
-                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                            className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                         />
                     </div>
                     <div>
@@ -147,7 +147,7 @@ function Signin() {
                                 value={signUpData.password}
                                 onChange={handleChange}
                                 required
-                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                             />
                             <button
                                 type="button"
@@ -171,7 +171,7 @@ function Signin() {
                                 value={signUpData.confirmPassword}
                                 onChange={handleChange}
                                 required={isSignUp}
-                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 dark:text-white"
+                                className="mt-1 block w-full bg-white px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none dark:focus:border-[#e97730] focus:ring-[#e97730] focus:border-[#e97730] dark:bg-[#383838] dark:border-gray-600 text-[#383838] dark:text-gray-300"
                             />
                             <button
                                 type="button"

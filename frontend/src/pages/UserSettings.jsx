@@ -8,7 +8,7 @@ function UserSettings() {
                     <h1 className="text-2xl font-bold md:text-3xl">User Settings</h1>
                 </div>
 
-                <div className="p-6 bg-gray-100 rounded-lg dark:bg-gray-700">
+                <div className="p-6 bg-gray-100 rounded-lg dark:bg-[#2a2a2a]">
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <label className="block font-medium">Profile Picture</label>
