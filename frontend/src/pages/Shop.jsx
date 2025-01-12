@@ -120,7 +120,7 @@ function Shop() {
                                     <input
                                         type="text"
                                         placeholder="Search..."
-                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-[#e97730] bg-transparent dark:focus:border-[#e97730]"
+                                        className="w-full text-black dark:text-white px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-[#e97730] bg-transparent dark:focus:border-[#e97730]"
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                         value={searchQuery}
 
