@@ -3,7 +3,7 @@ import Title from "./layout/ui/Title"
 import Cards from "./layout/ui/Cards";
 
 function NewArrivals() {
-    const data = useSelector((state) => state.filterProducts);
+    const data = useSelector((state) => state.products);
     const products = data.slice(0, 3);
     return (
         <div className="w-full py-16 px-4 dark:bg-[#383838]">
