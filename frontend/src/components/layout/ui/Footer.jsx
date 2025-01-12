@@ -21,12 +21,12 @@ function Footer() {
                         <h3 className="mb-4 text-xl font-bold text-[#e97730]">Contact Info</h3>
                         <div className="space-y-2 text-[#383838] dark:text-white">
                             <p>
-                                <a href="mailto:hamzalodhi2023@gmil.com">Email: contact@shoppy.com</a>
+                                <a href="mailto:hamzalodhi2023@gmil.com"><b> Email: </b> contact@shoppy.com</a>
                             </p>
                             <p>
-                                <a href="tel:(123) 456-7890">Phone: (123) 456-7890</a>
+                                <a href="tel:(123) 456-7890"><b> Phone: </b> (123) 456-7890</a>
                             </p>
-                            <p>Address: 123 Street Name, City, Country</p>
+                            <p><b> Address: </b> 123 Street Name, City, Country</p>
                         </div>
                     </div>
                 </div>
