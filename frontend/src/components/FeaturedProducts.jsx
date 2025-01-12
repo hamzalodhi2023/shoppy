@@ -11,8 +11,8 @@ function FeaturedProducts() {
                 <Title text1={"FEATURED"} text2={"PRODUCTS"} />
                 <div className="flex flex-wrap justify-evenly">
                     {/* cards Start */}
-                    {products.map(({ _id, name, price, description, photos }) => {
-                        return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} />
+                    {products.map(({ _id, name, price, description, photos, category }) => {
+                        return <Cards key={_id} _id={_id} name={name} price={price} description={description} photos={photos} category={category} />
                     })}
                     {/* cards End */}
                 </div>
