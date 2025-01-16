@@ -15,6 +15,10 @@ const router = express.Router();
  */
 const createUser = require("../controllers/users/create");
 const loginUser = require("../controllers/users/login");
+const googleLoginAuthentication =
+  require("../controllers/users/google-login").authentication;
+const googleLoginCallback =
+  require("../controllers/users/google-login").callback;
 
 /**
  * Route to create a new user
@@ -28,6 +32,8 @@ const loginUser = require("../controllers/users/login");
  */
 router.post("/create", createUser);
 router.post("/login", loginUser);
+router.get("/social-login/auth/google", googleLoginAuthentication);
+router.get("/social-login/auth/google/callback", googleLoginCallback);
 
 /**
  * Export the router instance
