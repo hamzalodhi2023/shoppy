@@ -106,10 +106,6 @@ const productSchema = new Schema(
       type: String,
       required: true,
     },
-    stuffType: {
-      type: String,
-      default: null,
-    },
     // Clothing specific attribute
     madeType: {
       type: String,

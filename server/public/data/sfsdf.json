@@ -1,0 +1,221 @@
+[
+  {
+    "name": "Apple AirPods Pro",
+    "description": "Active noise cancellation for immersive sound. Transparency mode for hearing and connecting with the world around you.",
+    "gender": "Unisex",
+    "price": 249.99,
+    "colors": ["White"],
+    "category": "Electronics",
+    "subCategory": "Headphones",
+    "unitOfMeasurement": "Piece",
+    "brand": "Apple",
+    "stock": 50,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71bhWgQK-cL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/31smWiDLk7L._AC_SL1067_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=X-Vo-w5b70Q",
+    "faqs": [
+      {
+        "question": "Are these compatible with Android?",
+        "answer": "Yes, but with limited functionality."
+      }
+    ]
+  },
+  {
+    "name": "Samsung Galaxy Watch 5",
+    "description": "Advanced health monitoring and long-lasting battery life.",
+    "gender": "Unisex",
+    "price": 329.99,
+    "colors": ["Black", "Silver"],
+    "category": "Electronics",
+    "subCategory": "Wearables",
+    "unitOfMeasurement": "Piece",
+    "brand": "Samsung",
+    "stock": 100,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/51hstkrvCyL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/41lqrRW7F5L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/51DBzUEtqML._AC_SL1100_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=0tH40LixF04",
+    "faqs": [
+      { "question": "Does it have GPS?", "answer": "Yes, GPS is built-in." }
+    ]
+  },
+  {
+    "name": "Logitech MX Master 3",
+    "description": "The ultimate mouse for creators and engineers.",
+    "gender": "Unisex",
+    "price": 99.99,
+    "colors": ["Graphite"],
+    "category": "Electronics",
+    "subCategory": "Accessories",
+    "unitOfMeasurement": "Piece",
+    "brand": "Logitech",
+    "stock": 75,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/51el11zcGRL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/611LSzq6HgL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61dgFvASgSL._AC_SL1500_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=KHZ4z-94RP4",
+    "faqs": [
+      {
+        "question": "Is it compatible with macOS?",
+        "answer": "Yes, it works seamlessly with macOS."
+      }
+    ]
+  },
+  {
+    "name": "Apple iPhone 13",
+    "description": "5G smartphone with A15 Bionic chip and 6.1-inch Super Retina XDR display.",
+    "gender": "Unisex",
+    "price": 799.0,
+    "colors": ["Blue", "Pink", "Midnight"],
+    "category": "Electronics",
+    "subCategory": "Smartphones",
+    "unitOfMeasurement": "Piece",
+    "brand": "Apple",
+    "stock": 50,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/51Pw9GCy1VL._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/51jld7BJyuL._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/61l9ppRIiqL._AC_SX679_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=7J_fBYfF1zI",
+    "faqs": [
+      {
+        "question": "Does it support MagSafe accessories?",
+        "answer": "Yes, it supports MagSafe technology."
+      }
+    ]
+  },
+  {
+    "name": "Samsung Galaxy S21 Ultra",
+    "description": "Flagship smartphone with 108MP camera and S Pen support.",
+    "gender": "Unisex",
+    "price": 1199.99,
+    "colors": ["Phantom Black", "Phantom Silver"],
+    "category": "Electronics",
+    "subCategory": "Smartphones",
+    "unitOfMeasurement": "Piece",
+    "brand": "Samsung",
+    "stock": 75,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71-EnPs+uQL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/81kfA-GtWwL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/61oxhHNYDXL._AC_SL1500_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=5cRNY9gkQoM",
+    "faqs": [
+      {
+        "question": "Does it come with a charger?",
+        "answer": "No, the charger is sold separately."
+      }
+    ]
+  },
+  {
+    "name": "Sony WH-1000XM4",
+    "description": "Wireless noise-canceling headphones with 30-hour battery life.",
+    "gender": "Unisex",
+    "price": 349.99,
+    "colors": ["Black", "Silver"],
+    "category": "Electronics",
+    "subCategory": "Headphones",
+    "unitOfMeasurement": "Piece",
+    "brand": "Sony",
+    "stock": 100,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/61D4Z3yKPAL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71xsREqXS+L._AC_SL1500_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=EV4nIFmgzbo",
+    "faqs": [
+      {
+        "question": "Does it support touch controls?",
+        "answer": "Yes, it has intuitive touch controls."
+      }
+    ]
+  },
+  {
+    "name": "ASUS TUF Gaming F15",
+    "description": "Gaming laptop with Intel i7, NVIDIA RTX 3060, and 144Hz display.",
+    "gender": "Unisex",
+    "price": 1049.99,
+    "colors": ["Eclipse Gray"],
+    "category": "Electronics",
+    "subCategory": "Laptops",
+    "unitOfMeasurement": "Piece",
+    "brand": "ASUS",
+    "stock": 20,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71NqbSDPAYL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/81CbQK6uXfL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/51MEUzIQXRL._AC_SL1000_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=OMwbzqLlxQ4",
+    "faqs": [
+      { "question": "Does it support VR?", "answer": "Yes, it is VR-ready." }
+    ]
+  },
+  {
+    "name": "Canon EOS R6",
+    "description": "Full-frame mirrorless camera with 4K video and dual pixel autofocus.",
+    "gender": "Unisex",
+    "price": 2499.99,
+    "colors": ["Black"],
+    "category": "Electronics",
+    "subCategory": "Cameras",
+    "unitOfMeasurement": "Piece",
+    "brand": "Canon",
+    "stock": 15,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71V1bR0OV3L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/715fM0yZV3L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71ZogJYM-NL._AC_SL1500_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=OtB9M2CU6c4",
+    "faqs": [
+      {
+        "question": "Does it support external microphones?",
+        "answer": "Yes, it has a 3.5mm mic input."
+      }
+    ]
+  },
+  {
+    "name": "KitchenAid Artisan Stand Mixer",
+    "description": "Tilt-head stand mixer with 10 speeds and 5-quart stainless steel bowl.",
+    "gender": "Unisex",
+    "price": 449.99,
+    "colors": ["Empire Red", "Onyx Black"],
+    "category": "Kitchen Appliances",
+    "subCategory": "Mixers",
+    "unitOfMeasurement": "Piece",
+    "brand": "KitchenAid",
+    "stock": 30,
+    "stockStatus": "In Stock",
+    "photos": [
+      "https://m.media-amazon.com/images/I/71cSdWwwGsL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/712bWH1KOiL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/71-QifUZJQL._AC_SL1500_.jpg"
+    ],
+    "productVideo": "https://www.youtube.com/watch?v=5cRNY9gkQoM",
+    "faqs": [
+      {
+        "question": "Is it compatible with all KitchenAid attachments?",
+        "answer": "Yes, it supports all attachments."
+      }
+    ]
+  }
+]
