@@ -1,4 +1,5 @@
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
+const { success } = require("../controllers/users/google-login");
 
 module.exports = new GoogleStrategy(
   {
@@ -8,8 +9,7 @@ module.exports = new GoogleStrategy(
     passReqToCallback: true,
     scope: ["profile", "email"],
   },
-  async (request, accessToken, refreshToken, profile, done) => {
-    console.log("Profile received:", profile);
-    return done(null, profile);
+  (request, accessToken, refreshToken, profile, done) => {
+    success(request, accessToken, refreshToken, profile, done);
   }
 );
