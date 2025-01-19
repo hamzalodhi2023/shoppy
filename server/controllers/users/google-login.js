@@ -17,6 +17,6 @@ module.exports.authentication = passport.authenticate("google", {
 });
 
 module.exports.callback = passport.authenticate("google", {
-  successRedirect: "http://localhost:5173/user-settings",
+  successRedirect: "http://localhost:5173/shop",
   failureRedirect: "http://localhost:5173/signin",
 });
